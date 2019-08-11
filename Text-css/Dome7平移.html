@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 600px;
+			margin:100px auto;
+			border: 1px solid black;
+		}
+		li{
+			list-style: none;
+			width: 100px;
+			height: 100px;
+			margin: 100px auto;
+			position: fixed;
+			transform-origin: 0px 0px;
+		}
+		li:nth-child(1){
+			background-color: red;
+			transform: rotate(30deg);
+		}
+		li:nth-child(2){
+			background-color: yellow;
+			transform: rotate(45deg);
+		}
+		li:nth-child(3){
+			background-color: cyan;
+			transform: rotate(60deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

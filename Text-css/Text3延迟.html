@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 100px auto;
+			animation:sport 1s; 
+			animation-fill-mode: backwards;
+		}
+		@keyframes sport{
+			0%{
+				transform: rotate(20deg);
+			}
+			25%{
+				transform: rotate(40deg);
+			}
+			50%{
+				transform: rotate(60deg);
+			}
+			75%{
+				transform: rotate(80deg);
+			}
+			100%{
+				transform: rotate(100deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		1433
+	</div>
+</body>
+</html>

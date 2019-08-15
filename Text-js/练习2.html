@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="全选" id="btnQ">
+	<input type="button" value="全不选" id="btnB">
+	<input type="button" value="反选" id="btnF">
+	<div id="content">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+	</div>
+</body>
+<script>
+	var oBtnQ=document.getElementById('btnQ');
+	var oBtnB=document.getElementById('btnB');
+	var oBtnF=document.getElementById('btnF');
+	var oDiv=document.getElementById('content');
+	var aIpt=oDiv.querySelectorAll('#content input');
+	oBtnQ.onclick=function(){
+		// alert('aaa')
+		for(var i=0;i<aIpt.length;i++){
+			aIpt[i].checked=true;
+		}
+	}
+	oBtnB.onclick=function(){
+		for(var i=0;i<aIpt.length;i++){
+			aIpt[i].checked=false;
+		}
+	}
+	oBtnF.onclick=function(){
+		for(var i=0;i<aIpt.length;i++){
+			if (aIpt[i].checked==true) {
+				aIpt[i].checked=false;
+			}else{
+				aIpt[i].checked=true;
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var aEle = oUl.firstChild;
+	console.log(aEle==oUl[0])
+	/*
+	var aEle = oUl.children;
+	for(var i=0;i<aEle.length;i++){
+		console.log(aEle[i])
+	}*/
+	/*var aEle = oUl.childNodes;
+	for(var i=0; i<aEle.length;i++){
+		if (aEle[i].nodeType == 1) {
+			aEle[i].style.color='red';
+		}		
+	}*/
+</script>
+</html>

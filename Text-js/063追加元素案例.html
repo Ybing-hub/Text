@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea  id="txt" cols="30" rows="10"></textarea>
+	<input type="button" id="btn" value="点击">
+	<ul id="ul1">
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl1 = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		if (oTxt.value == '') {
+			alert('请输入内容')
+		}else{
+			var val = oTxt.value;
+			var oLi = document.createElement('li')
+			oLi.innerHTML  = val;
+			oUl1.appendChild(oLi);
+			oTxt.value = '';
+		}
+		
+	}
+</script>
+</html>

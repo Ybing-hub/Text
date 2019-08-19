@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+		}
+		#son{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="克隆" id="btn">
+	<div id="box">
+		<div id="son">
+			
+		</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+	var aDiv = document.getElementByClassName('son')
+	var iWidth = 100;
+	var iHeight = 100;
+	var iMargin = 20;
+	var oCount = 3;
+	oBtn.onclick = function(){
+			var oDiv = aDiv[0].cloneNode();
+			oBox.appendChild(oDiv);
+		for(var i=0;i<aDiv.length;i++){
+			var iCol = i % oCount;
+			var iRow = parseInt(i/oCount);
+			aDiv[i].style.top = iRow*(iHeight+iMargin)+'px';
+			aDiv[i].style.left = iCol*(iHeight+iMargin)+'px';
+		}	
+	}
+</script>
+</html>

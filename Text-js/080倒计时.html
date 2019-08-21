@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>080倒计时</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #000;
+		}
+		#timer{
+			color: #fff;
+			font-size: 40px;
+			margin: 100px auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<!-- 距离活动结束还有12时00分00秒 -->
+	</div>
+</body>
+<script>
+	function toStr(num){
+		return num < 10 ? '0'+num : ''+num;
+	}
+	function toTime(){
+		var allTime = parseInt((endTime - Date.now())/1000);
+		if (allTime<=0) {
+			allTime=0;
+			clearInterval(timer);
+		}
+		var iHours = parseInt(allTime/3600);
+		var iMinutes = parseInt(allTime%3600/60);
+		var iScond = allTime%3600%60;
+		oTimers.innerHTML = "距离活动结束还有"+toStr(iHours)+"时"+toStr(iMinutes)+"分"+toStr(iScond)+"秒"
+	}
+	var oTimer = document.getElementById('timer');
+	var endDate = new Date('2019-8-21 12:00:00');
+	var endTime = endDate.getTime()
+	var timer;
+	timer = setInterval(toTime,1000);
+	toTime();
+	
+</script>
+</html>

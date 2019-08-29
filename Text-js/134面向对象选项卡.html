@@ -49,6 +49,7 @@
 	</ul>
 </body>
 <script>
+	/*
 	var aBtn=document.querySelectorAll('#btn-list li')
 	var aCont=document.querySelectorAll('#content-item li')
 	for(var i=0;i<aBtn.length;i++){
@@ -62,6 +63,29 @@
 			this.className='active';
 			aCont[this.index].style.display = 'block';
 		}
+	}*/
+	function Tab(){
+		this.aBtn = document.querySelectorAll('#btn-list li');
+		this.aCont = document.querySelectorAll('#content-item li');
+		this.BindEvent();
 	}
+	Tab.prototype.BindEvent = function(){
+		var _this = this;
+		for(var i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onclick = function(){
+				_this.fnClick(this);
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){
+		for(var i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].className = '';
+			this.aCont[i].style.display = 'none';
+		}
+		oBtn.className = 'active';
+		this.aCont[oBtn.index].style.display = 'block';
+	}
+	new Tab();
 </script>
 </html>

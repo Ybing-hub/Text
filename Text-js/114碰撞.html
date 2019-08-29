@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		#box1{
+			width: 200px;
+			height: 200px;
+			background-color: #f67;
+			margin: 200px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box1"></div>
+</body>
+<script>
+	function checkBump(obj1,obj2){
+		if((obj1.offsetLeft + obj1.offsetWidth) > obj2.offsetLeft
+			&& (obj1.offsetTop + obj1.offsetHeight) > obj2.offsetTop
+			&& (obj2.offsetLeft + obj2.offsetWidth) > obj1.offsetLeft
+			&&  (obj2.offsetTop + obj2.offsetHeight) > obj1.offsetTop
+			){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	var oBox  = document.getElementById('box');
+	var oBox1  = document.getElementById('box1');
+	var disX = 0,disY = 0;
+	oBox.onmousedown = function(ev){
+		disX = ev.clientX - oBox.offsetLeft;
+		disY = ev.clientY - oBox.offsetTop;
+		document.onmousemove = function(ev){
+			oBox.style.top =ev.clientY - disY + 'px';
+			oBox.style.left =ev.clientX - disX + 'px';
+			if ((oBox.offsetLeft+oBox.offsetWidth) > oBox1.offsetLeft
+				&& (oBox1.offsetLeft+oBox1.offsetWidth) > oBox.offsetLeft
+				&&(oBox.offsetHeight+oBox.offsetTop) > oBox1.offsetTop
+				&&(oBox1.offsetHeight+oBox1.offsetTop) > oBox.offsetTop
+			) {
+				oBox1.style.backgroundColor = 'cyan'
+			}else{
+				oBox1.style.backgroundColor = '#f67'
+			}
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

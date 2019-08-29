@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			height: 500px;
+			margin: 100px auto;
+		}
+		.box div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 20px;
+			text-align: center;
+			line-height: 100px;
+			opacity: 0.5
+		}
+		/*.box div:last-child{
+			opacity: 0.1;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="box1">变长</div>
+		<div id="box2">变高</div>
+		<div id="box3">变色</div>
+	</div>
+</body>
+<script>
+	function anmiate1(obj,attr,target,iSliner,fuEnd){
+		if (iSliner == undefined) {
+			iSliner = true;
+		}
+		var iSzf = 0;
+		var isStop = false;
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var conner = parseFloat(getComputedStyle(obj,false)[attr]);
+			if (attr == 'opacity') {
+				var conner = Math.round(conner*100);
+			}
+			if (iSliner) {
+				if (conner<target) {
+					iSzf = 10;
+				}else{
+					iSzf = -10;
+				}
+				if (Math.abs(target-conner) < Math.abs(iSzf)){
+					isStop = true;
+				}
+			}else{
+				var iSzf = 0;
+				iSzf = (target - conner)/10;
+				iSzf = iSzf >0 ? Math.ceil(iSzf) : Math.floor(iSzf);
+				if(!iSzf){
+					isStop = true;
+				}
+			}
+			if (isStop) {
+				clearInterval(obj.timer);
+				if (fuEnd) {
+					fuEnd()
+				}
+			}else{
+				if (attr == 'opacity') {
+					obj.style[attr]= (conner + iSzf)/100;
+				}else{
+					obj.style[attr] = (conner + iSzf)+'px';
+				}
+			}
+		},30)
+	}
+	var oDiv1 = document.getElementById('box1');
+	var oDiv2 = document.getElementById('box2');
+	var oDiv3 = document.getElementById('box3');
+	// var timer = 0
+	oDiv1.onmouseover = function(){
+		anmiate1(oDiv1,'width',300,true,function(){
+			anmiate1(oDiv1,'height',300,false,function(){
+				anmiate1(oDiv1,'opacity',100,true)
+			})
+		})
+	}
+	oDiv2.onmouseover = function(){
+		anmiate1(oDiv2,'height',300)
+	}
+	oDiv3.onmouseover = function(){
+		anmiate1(oDiv3,'opacity',100)
+	}
+</script>
+</html>

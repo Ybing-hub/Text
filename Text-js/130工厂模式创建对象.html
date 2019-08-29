@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function createStudent(name,age,address,major){
+		var obj = new Object();
+		obj.name = name;
+		obj.age = age;
+		obj.address = address;
+		obj.major = major
+		obj.sayhi = function(){
+			console.log('hi...');
+		}
+		return obj
+	}
+	var stu1 = createStudent("dijia",20,"许昌","数字媒体");
+	console.log(stu1);
+	var stu2 = createStudent("zhangsan","19","禹州","土木工程");
+	console.log(stu2);
+</script>
+</html>

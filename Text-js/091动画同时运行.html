@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			height: 500px;
+			margin: 100px auto;
+		}
+		.box div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 20px;
+			text-align: center;
+			line-height: 100px;
+		}
+		.box div:last-child{
+			opacity: 0.1;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="box1">变长</div>
+		<div id="box2">变高</div>
+		<div id="box3">变色</div>
+	</div>
+</body>
+<script>
+	function anmiate(obj,attr,target){
+		clearInterval(obj.timer)
+		obj.timer = setInterval(function(){
+			var conner = parseFloat(getComputedStyle(obj,false)[attr]);
+			if (attr == 'opacity') {
+				conner = Math.round(conner * 100)
+			}
+			
+			var iSzf = 0;
+			if (conner<target) {
+				iSzf = 10;
+			}else{
+				iSzf = -10;
+			}
+			if (Math.abs(target-conner) < Math.abs(iSzf)){
+				if (attr == 'opacity') {
+					obj.style[attr] = target/100;
+				}else{
+					obj.style[attr] = target + 'px'
+				}
+				clearInterval(obj.timer);
+			}
+			else{
+				if (attr == 'opacity') {
+					obj.style[attr] = (conner + iSzf)/100;
+				}else{
+					obj.style[attr] = conner + iSzf + 'px';
+				}	
+			}
+		},30)
+	}
+	var oDiv1 = document.getElementById('box1');
+	var oDiv2 = document.getElementById('box2');
+	var oDiv3 = document.getElementById('box3');
+	// var timer = 0
+	oDiv1.onmouseover = function(){
+		anmiate(oDiv1,'width',300)
+	}
+	oDiv2.onmouseover = function(){
+		anmiate(oDiv2,'height',300)
+	}
+	oDiv3.onmouseover = function(){
+		anmiate(oDiv3,'opacity',100)
+	}
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox  = document.getElementById('box');
+	var disX = 0,disY = 0;
+	oBox.onmousedown = function(ev){
+		disX = ev.clientX - oBox.offsetLeft;
+		disY = ev.clientY - oBox.offsetTop;
+		var oClo = document.createElement('div')
+		oClo.style.position = 'absolute';
+		oClo.style.top = oBox.offsetTop + 'px';
+		oClo.style.left = oBox.offsetLeft + 'px';
+		oClo.style.width = oBox.offsetWidth + 'px';
+		oClo.style.height = oBox.offsetHeight + 'px';
+		oClo.style.backgroundColor = 'rgba(0,0,255,0.5)';
+		document.body.appendChild(oClo);
+		document.onmousemove = function(ev){
+			oClo.style.top =ev.clientY - disY + 'px';
+			oClo.style.left =ev.clientX - disX + 'px';
+		}
+		document.onmouseup = function(){
+			oBox.style.top = oClo.style.top;
+			oBox.style.left = oClo.style.left;
+			document.body.removeChild(oClo);
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

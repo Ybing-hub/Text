@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = new Object();
+	var obj1 = new Object();
+	obj.name = "dijia";
+	obj.age = 20;
+	obj.sayHi = function(){
+		console.log('hellow');
+	}
+	obj.sort(function(n1,n2){
+		return n1 - n2;
+	})
+	console.log(obj)
+
+	obj1.name = "leo";
+	obj1.age = 24;
+	obj1.sayHi = function(){
+		console.log('hellow');
+	}
+	obj1.sort = function(){
+		console.log('hi...')
+	}
+	console.log(obj1);
+</script>
+</html>

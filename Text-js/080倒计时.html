@@ -37,7 +37,7 @@
 		var iHours = parseInt(allTime/3600);
 		var iMinutes = parseInt(allTime%3600/60);
 		var iScond = allTime%3600%60;
-		oTimers.innerHTML = "距离活动结束还有"+toStr(iHours)+"时"+toStr(iMinutes)+"分"+toStr(iScond)+"秒"
+		oTimer.innerHTML = "距离活动结束还有"+toStr(iHours)+"时"+toStr(iMinutes)+"分"+toStr(iScond)+"秒"
 	}
 	var oTimer = document.getElementById('timer');
 	var endDate = new Date('2019-8-21 12:00:00');

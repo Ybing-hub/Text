@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>089伸缩菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#main{
+			position: relative;
+			top: 0px;
+			left: -400px;
+			width: 400px;
+			height: 400px;
+			background-color: gray;
+		}
+		#sub{
+			position: absolute;
+			top: 0px;
+			right: -100px;
+			width: 100px;
+			height: 400px;
+			background-color: #f67;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="sub">
+			
+		</div>
+	</div>
+</body>
+<script>
+	var oMain = document.getElementById('main');
+	var oSub = document.getElementById('sub');
+	var timer = 0;
+	oMain.onmouseover = function(){
+		clearInterval(timer)
+		var iSzf = 0;
+		if (oMain.offsetLeft<0) {
+			iSzf = 10;
+		}else{
+			iSzf = -10;
+		}
+		timer = setInterval(function(){
+			if (Math.abs(0-oMain.offsetLeft) < Math.abs(iSzf)){
+				oMain.offsetLeft = '0';
+				clearInterval(timer);
+			}
+			else{
+				oMain.style.left = oMain.offsetLeft + iSzf + 'px'
+			}
+		},30)
+	}
+	oMain.onmouseout = function(){
+		clearInterval(timer)
+		var iSzf = 0;
+		if (oMain.offsetLeft<-400){
+			iSzf = 10;
+		}else{
+			iSzf = -10;
+		}
+		timer = setInterval(function(){
+			if (Math.abs(-400-oMain.offsetLeft) < Math.abs(iSzf)){
+				oMain.offsetLeft = '-400';
+				clearInterval(timer);
+			}
+			else{
+				oMain.style.left = oMain.offsetLeft + iSzf + 'px'
+			}
+		},30)
+	}
+</script>
+</html>

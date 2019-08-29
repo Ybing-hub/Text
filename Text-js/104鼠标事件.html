@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 500px;
+			height: 500px;
+			background-color: blue;
+			margin: 100px auto;
+			overflow: hidden;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background-color: cyan;
+			margin: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son">
+			
+		</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('father')
+	/*
+	document.addEventListener('click',function(){
+		console.log('click 点击')
+	},false)
+	document.addEventListener('mousedown',function(){
+		console.log('mousedown 按下')
+	},false)
+	document.addEventListener('mouseup',function(){
+		console.log('mouseup 抬起')
+	},false)
+	document.addEventListener('mousewheel',function(){
+		console.log('mousewheel 滑动')
+	},false)*/
+	oBox1.addEventListener('mouseenter',function(){
+		console.log('mouseenter')
+	},false)
+	oBox1.addEventListener('mouseleave',function(){
+		console.log('mouseleave')
+	},false)
+	
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 80px;
+			background-color: blue;
+		}
+		#line{
+			position: absolute;
+			top: 0px;
+			left: 600px;
+			width: 1px;
+			height: 600px;
+			background-color: #000;
+		}
+		#box img{
+			width: 100%;
+			height: 100%;
+
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">减速动画</button>
+	<div id="box"></div>
+	
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var corront = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			var corront = Math.round(corront*100);
+			var iSpeed = 0;
+			iSpeed = (0 - corront)/10;
+			iSpeed = iSpeed >0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+			if(!iSpeed){
+				clearInterval(timer);
+			}else{
+				oBox.style.opacity = (corront + iSpeed)/100;
+			}
+		},30)
+	}
+</script>
+</html>

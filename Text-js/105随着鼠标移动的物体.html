@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: purple;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="Js/until.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	document.addEventListener('mousemove',function(ev){
+		oBox.style.top = event.clientY+getscrollTop()+'px';
+		oBox.style.left = event.clientX+getscrollLeft()+'px'
+	},false)
+</script>
+</html>

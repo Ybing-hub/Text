@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" id="form1">
+	<div>用户名：
+		<input type="username" name="username">
+	</div>
+	<div>密码：
+		<input type="password" name="password">
+	</div>
+		<input type="button" id="btn" value="点你">
+	<div>
+		<input type="radio" name="sex">男
+		<input type="radio" name="sex">女
+	</div>
+	<select name="city" id="">
+		<option value="bj">北京</option>
+		<option value="sh">上海</option>
+		<option value="xc">许昌</option>
+	</select>
+	<div>
+		爱好：
+		<input type="checkbox" name="song">唱
+		<input type="checkbox" name="jump">跳
+		<input type="checkbox" name="rap">rap
+		<input type="checkbox" name="basketball">篮球
+	</div>
+	</form>
+</body>
+<script>
+	var oFrom = document.forms[0];
+	console.log(oFrom)
+	var aSelect = oFrom.city
+	console.log(aSelect)
+</script>
+</html>

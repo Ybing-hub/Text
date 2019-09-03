@@ -9,11 +9,11 @@
 			padding: 0;
 			list-style: none;
 		}
-		#btn-list{
+		.btn-list{
 			overflow: hidden; 
 			margin-bottom: 20px;
 		}
-		#btn-list li{
+		.btn-list li{
 			width: 300px;
 			height: 100px;
 			text-align: center;
@@ -24,7 +24,7 @@
 			color: #ff6700;
 			border-bottom:1px solid #ff6700;
 		}
-		#content-item li{
+		.content-item li{
 			width: 300px;
 			height: 300px;
 			border: 1px solid #000;
@@ -65,8 +65,8 @@
 		}
 	}*/
 	function Tab(){
-		this.aBtn = document.querySelectorAll('#btn-list li');
-		this.aCont = document.querySelectorAll('#content-item li');
+		this.aBtn = document.querySelectorAll('.btn-list li');
+		this.aCont = document.querySelectorAll('.content-item li');
 		this.BindEvent();
 	}
 	Tab.prototype.BindEvent = function(){

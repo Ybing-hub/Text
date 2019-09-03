@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="扫描">
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var val = oTxt.value
+		var reg = /^[12]\d{3}$/g;
+		if (reg.test(val)) {
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = '87498dsafdf98DAFD	SF7979efaeafe#$$#$#$￥466￥5456￥564sda￥';
+	var reg = /\d/g;
+	var reg1 = /\D/g;
+	var reg2 = /\w/g;
+	var reg6 = /[0-9a-zA-Z]/g;
+	var reg3 = /\W/g;
+	var reg4 = /\s/g;
+	var reg7 = /[\t\n\f\r]/g;
+	var reg5 = /\S/g;
+	var reg8 = /[^\t\n\f\r]/g;
+	console.log(arr.replace(reg,'*'));
+	console.log(arr.replace(reg1,'*'));
+	console.log(arr.replace(reg2,'*'));
+	console.log(arr.replace(reg6,'*'));
+	console.log(arr.replace(reg3,'*'));
+	console.log(arr.replace(reg4,'*'));
+	console.log(arr.replace(reg7,'*'));
+	console.log(arr.replace(reg5,'*'));
+	console.log(arr.replace(reg8,'*'));
+</script>
+</html>

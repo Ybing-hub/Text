@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea id="txt" cols="30" rows="10"></textarea>
+	
+	<input type="button" id="btn" value="送你上路">
+
+	<textarea id="txt1" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oTxt1 = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var reg = /<[^<>]+>/g;
+		oTxt1.value = oTxt.value.replace(reg,'*')
+	}
+</script>
+</html>

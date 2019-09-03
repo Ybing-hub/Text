@@ -11,7 +11,7 @@
 		#box{
 			position: relative;
 		}
-		#son{
+		.son{
 			position: absolute;
 			width: 100px;
 			height: 100px;
@@ -22,7 +22,7 @@
 <body>
 	<input type="button" value="克隆" id="btn">
 	<div id="box">
-		<div id="son">
+		<div class="son">
 			
 		</div>
 	</div>
@@ -30,14 +30,14 @@
 <script>
 	var oBox = document.getElementById('box');
 	var oBtn = document.getElementById('btn');
-	var aDiv = document.getElementByClassName('son')
+	var aDiv = document.getElementsByClassName('son')
 	var iWidth = 100;
 	var iHeight = 100;
 	var iMargin = 20;
 	var oCount = 3;
 	oBtn.onclick = function(){
-			var oDiv = aDiv[0].cloneNode();
-			oBox.appendChild(oDiv);
+		var oDiv = aDiv[0].cloneNode();
+		oBox.appendChild(oDiv);
 		for(var i=0;i<aDiv.length;i++){
 			var iCol = i % oCount;
 			var iRow = parseInt(i/oCount);

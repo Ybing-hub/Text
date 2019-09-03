@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+		}
+	</style>
+</head>
+<body>
+	<form action="" id="form1">
+		<input type="username" name="username">
+		<input type="password" name="password">
+		<input type="button" id="btn" value="点你">
+		<input type="radio" name="sex">男
+		<input type="radio" name="sex">女
+	</form>
+</body>
+<script>
+	// var oForm = document.getElementById('form1')
+	// console.log(oForm)
+	var oForm = document.forms
+	var aForm = oForm[0]
+	console.log(aForm['username'])
+	console.log(aForm.username)
+	console.log(aForm['password'])
+	console.log(aForm.password.form)
+	console.log(aForm.sex)
+</script>
+</html>

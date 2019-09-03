@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = 'fd5 5fd e87 gt7 s4!';
+	var reg = /[a-z](?=\d)/g;
+	var reg1 = /[a-z](?!\d)/g;
+	console.log(arr.replace(reg,'*'));
+	console.log(arr.replace(reg1,'*'));
+	// console.log(arr.replace(reg2,'*'));
+	// console.log(arr.replace(reg3,'*'));
+</script>
+</html>

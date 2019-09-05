@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.top{
+			height: 34px;
+		}
+		.top>input,
+		.top>a{
+			width: 20%;
+			height: 34px;
+			position: fixed;
+			text-align: center;
+			font-size: 30px;
+			line-height: 34px;
+		}
+		.top>input{
+			z-index: 9;
+			opacity: 0;
+		}
+		.top>a{
+			text-decoration: none;
+		}
+		.top>input:checked+a{
+			color: red;
+		}
+		.ctrl1,.ctrl1+a{
+			left: 0%;
+		}
+		.ctrl2,.ctrl2+a{
+			left: 20%;
+		}
+		.ctrl3,.ctrl3+a{
+			left: 40%;
+		}
+		.ctrl4,.ctrl4+a{
+			left: 60%;
+		}
+		.ctrl5,.ctrl5+a{
+			left: 80%;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<div class="top">
+			<input type="radio" name="nav" class="ctrl1"><a href="javascript:;">Home</a>
+			<input type="radio" name="nav" class="ctrl2"><a href="javascript:;">Service</a>
+			<input type="radio" name="nav" class="ctrl3"><a href="javascript:;">About</a>
+			<input type="radio" name="nav" class="ctrl4"><a href="javascript:;">Team</a>
+			<input type="radio" name="nav" class="ctrl5"><a href="javascript:;">Contact</a>
+		</div>
+	</div>
+</body>
+</html>

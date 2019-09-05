@@ -16,67 +16,61 @@
 		}
 		.box .first{
 			height: 40px;
-			background-color: gray;
+			background-color: cyan;
 		}
 		.box .first>li{
 			float: left;
 			width: 100px;
 			height: 100%;
+			margin-left: 20px;
 			line-height: 40px;
 			text-align: center;
 			background-color: yellow;
-			margin-left: 20px;
 		}
-		.box .first>li:hover .second>li{
-			opacity: 1
-		}
-		.box .second>li{
-			width: 100%;
+		.box .first>li ul>li{
+			width: 100px;
 			height: 100%;
-			background-color: pink;
-			opacity: 0;
-			transition: all 2s;
+			background-color: gray;
 			transform: rotateY(180deg);
+			opacity: 0;
+			transition: all 1s;
 		}
-		.box .first>li:hover .second li{
+		.box .first>li:hover ul>li{
+			opacity: 1;
 			transform: rotateY(0deg);
 		}
-		.box .first>li:hover .second li:nth-child(1){
+		.box .first>li:hover ul>li:nth-child{
 			transition-delay: 0ms;
 		}
-		.box .first>li:hover .second li:nth-child(2){
+		.box .first>li:hover ul>li:nth-child(2){
 			transition-delay: 200ms;
 		}
-		.box .first>li:hover .second li:nth-child(3){
+		.box .first>li:hover ul>li:nth-child(3){
 			transition-delay: 400ms;
 		}
-		.box .first>li:hover .second li:nth-child(4){
+		.box .first>li:hover ul>li:nth-child(4){
 			transition-delay: 600ms;
-		}
-		.box .first>li:hover .second li:nth-child(5){
+		}.box .first>li:hover ul>li:nth-child(5){
 			transition-delay: 800ms;
 		}
-		.second li:nth-child(1){
-
-		}
-		.second li:nth-child(1){
+		.box .first>li ul>li:nth-child{
 			transition-delay: 800ms;
 		}
-		.second li:nth-child(2){
+		.box .first>li ul>li:nth-child(2){
 			transition-delay: 600ms;
 		}
-		.second li:nth-child(3){
+		.box .first>li ul>li:nth-child(3){
 			transition-delay: 400ms;
 		}
-		.second li:nth-child(4){
+		.box .first>li ul>li:nth-child(4){
 			transition-delay: 200ms;
 		}
-		.second li:nth-child(5){
-			transition-delay: 0ms;
+		.box .first>li ul>li:nth-child(5){
+			transition-delay: 800ms;
 		}
 		.box .content{
-			height: 600px;
-			background-color: cyan;
+			height: 400px;
+			background-color: purple;
 		}
 	</style>
 </head>
@@ -95,23 +89,9 @@
 			</li>
 			<li>
 				一级菜单2
-				<ul class="second">
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-				</ul>
 			</li>
 			<li>
 				一级菜单3
-				<ul class="second">
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-					<li>二级菜单</li>
-				</ul>
 			</li>
 		</ul>
 		<div class="content">

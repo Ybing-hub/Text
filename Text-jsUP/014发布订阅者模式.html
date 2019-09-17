@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Teacher(name){
+		this.name = name;
+		this.students = [];
+	}
+	Teacher.prototype = {
+		constructor:Teacher,
+		zhuce:function(student){
+			this.students.push(student)
+		},
+		fabu:function(task){
+			for(var i = 0;i<this.students.length;i++){
+				this.students[i].listen(task);
+			}
+		}
+	}
+	function Student(name,teacher){
+		this.name = name;
+		teacher.zhuce(this);
+	}
+	Student.prototype = {
+		constructor:Student,
+		listen:function(task){
+			console.log(this.name + task) 	
+		}
+	}
+	var t = new Teacher('zhangsan');
+	var s1 = new Student('tom',t);
+	var s2 = new Student('jike',t);
+	var s3 = new Student('any',t);
+	console.log(t);
+	console.log(s1);
+	t.fabu('的作业是全部练习题')
+</script>
+</html>

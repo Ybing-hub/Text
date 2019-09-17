@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.sayName = function(){
+		console.log(this.name)
+	}
+	Person.prototype.sayAge = function(){
+		console.log(this.age)
+	}
+
+	var p1 = new Person('tom',18);
+	p1.sayName();
+	p1.sayAge();
+	
+	function Student(name,age,major){
+		this.name = name;
+		this.age = age;
+		this.major = major;
+	}
+	Student.prototype.sayName = function(){
+		console.log(this.name)
+	}
+	Student.prototype.sayAge = function(){
+		console.log(this.age)
+	}
+	Student.prototype.sayMajor = function(){
+		console.log(this.major)
+	}
+	var s1 = new Student('jike',20,'computer');
+	console.log(s1);
+	s1.sayName();
+	s1.sayAge();
+	s1.sayMajor();
+</script>
+</html>

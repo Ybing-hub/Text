@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*Person.prototype.sayName = function(){
+		console.log(this.name)
+	}
+	Person.prototype.sayAge = function(){
+		console.log(this.age)
+	}
+	Person.prototype.Legs = 2;*/
+
+	(function(w){
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype = {
+		 	constructor:Person,
+		 	sayName:function(){
+		 		console.log(this.name)
+		 	},
+		 	sayAge:function(){
+		 		console.log(this.age)
+		 	},
+		 	Legs:2
+		 }
+		w.Person = Person
+	})(window);
+
+	var p1 = new Person('tom',18);
+	p1.sayName();
+	p1.sayAge();
+	console.log(p1.Legs)
+</script>
+</html>

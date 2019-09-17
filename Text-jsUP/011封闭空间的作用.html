@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 1100px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			float: left;
+			margin-right: 10px;
+			text-align: center;
+			line-height: 100px;
+
+		}
+		.active{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	var lastindex = 0;
+	for(var i = 0;i<aLi.length;i++){
+		/*aLi[i].index = i;
+		aLi[i].onmouseenter = function(){
+			
+			for(var j = 0;j<aLi.length;j++){
+				aLi[j].className = '';
+			}
+			aLi[lastindex].className = '';
+			this.className = 'active';
+			lastindex = this.index;
+		}*/
+		(function(i){
+			aLi[i].onmouseenter = function(){
+				aLi[lastindex].className = '';
+				aLi[i].className = 'active';
+				lastindex = i;	
+			}
+		})(i);
+	}
+</script>
+</html>

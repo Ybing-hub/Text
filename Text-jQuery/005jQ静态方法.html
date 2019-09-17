@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	var arr = [1,2,3,8,5,4]
+	/*var res = arr.each(function(value,index){
+		console.log(value,index)
+	})*/
+	var res = $.each(arr,function(value,index){
+		console.log(value,index)
+	})
+	/*var res1 = arr.map(arr,function(value,index){
+		console.log(value,index)
+	})*/
+	var res1 = $.map(arr,function(value,index){
+		console.log(value,index)
+		return value*10
+	})
+
+	var arr2 = {
+		1:"aaa",
+		2:"bbb",
+		3:"ccc",
+		length:3
+	}
+	var res2 = $.each(arr2,function(value,index){
+		console.log(value,index)
+	})
+	console.log("1-----1",res)
+	console.log("2-----2",res1)
+	console.log("3-----3",res2)
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.sayName = function(){
+		console.log('I am' + this.name)
+	}
+	Person.prototype.sayAge = function(){
+		console.log('I am' +this.age+' years old')
+	}
+	var p1 = new Person('tom',18);
+	p1.major = 'computer';
+	for(var attr in p1){
+		console.log(attr,p1[attr])
+	}
+	// p1.LEGS = 4;
+	// p1.EYES = 2;
+	/*Object.defineProperty(p1,'EYES',{
+		value:2,
+		enumerable:false,
+		writable:false,
+		configurable:false
+	})*/
+	p1.EYES = 4;
+	// console.log(p1)
+
+	Object.defineProperties(p1,{
+		'LEGS':{value:2,writable:true},
+		'EYES':{value:4,writable:false,configurable:true}
+	});
+	console.log(p1)
+	var result = Object.getOwnPropertyDescriptor(p1,'EYES')
+	console.log(result)
+</script>
+</html>

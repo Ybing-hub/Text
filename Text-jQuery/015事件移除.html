@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div>雷德深and枕头们</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		/*$('div').click(function(){
+			alert('晚上好')
+		})*/
+		$('div').on('click',function(){
+			alert('1-晚上好')
+		})
+		/*$('div').on('mousemove',function(){
+			alert('2-晚上好')
+		})
+		$('div').one('click',function(){
+			alert('晚上好')
+		})*/
+		/*$('div').hover(function(){
+			alert('晚上好')
+		},function(){
+			alert('早点休息')
+		})*/
+		$('div').off('click')
+	})
+</script>
+</html>

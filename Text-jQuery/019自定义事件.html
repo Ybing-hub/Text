@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>txt</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('test',function(event,arg1,arg2){
+			alert('xxxx'+arg1+arg2);
+		})
+		$('div').trigger('test',['yyy','zzz'])
+		
+		$('div').on('click',function(event,arg1){
+			alert('点击'+arg1)
+		})
+		$('div').trigger('click','111')
+	});
+</script>
+</html>

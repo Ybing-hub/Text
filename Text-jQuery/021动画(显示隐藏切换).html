@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 600px;
+			height: 400px;
+			margin: 100px auto;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<p>显示</p>
+	<p>隐藏</p>
+	<p>切换</p>
+	<div><img src="../Text-css/image/fengjing1.jpg" alt=""></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').eq(0).on('click',function(){
+			$('div').show(1000)
+		});
+		$('p').eq(1).on('click',function(){
+			$('div').hide(1000)
+		});
+		$('p').eq(2).on('click',function(){
+			$('div').toggle(1000)
+		});
+	});
+</script>
+</html>

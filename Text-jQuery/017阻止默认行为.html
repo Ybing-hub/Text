@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 400px;
+			height: 100px;
+			margin: 200px auto;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" placeholder="请输入要搜索的内容">
+		<a href="https://www.baidu.com">百度一下，你就知道</a>
+	</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		$('a').on('click',function(event){
+			event.preventDefault()
+			alert('aaa');
+
+			// return false;
+
+		})
+	});
+</script>
+</html>

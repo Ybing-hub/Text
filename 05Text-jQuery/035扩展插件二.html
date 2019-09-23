@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;	
+			border: 1px solid #000;
+		}
+	</style>	
+</head>
+<body>
+	<button>点击</button>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$.fn.extend({
+		setColor:function(options){
+			var defaults = {background:'red'}
+			options = $.extend({},defaults,options)
+			this.each(function(index,item){
+				item.style.background = options.background;
+			})
+			return this;
+		}
+	})
+	
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$('div').setColor({
+				background:'green'
+			}).animate({width:400})
+		})
+	});
+</script>
+</html>

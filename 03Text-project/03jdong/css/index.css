@@ -1,0 +1,22 @@
+.nav{
+	height: 50px;
+	background-color: red;
+}
+
+.header{
+	height: 100px;
+	background-color: orange;
+}
+.foucs{
+	height: 400px;
+	background-color: yellow;
+}
+.todays{
+	height: 200px;
+	background-color: green;
+}
+.floor{
+	height: 400px;
+	background-color: cyan;
+	margin-top: 10px;
+}

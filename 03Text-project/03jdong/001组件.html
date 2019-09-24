@@ -15,12 +15,15 @@
 			/*border: 1px solid #000;*/
 			background-color: red;
 		}
+		.transition{
+			transition: all 0.5s;
+		}
 	</style>
 </head>
 <body>
 	<button>显示</button>
 	<button>隐藏</button>
-	<div class="box"></div>
+	<div class="box transition"></div>
 </body>
 <script src="jquery-1.12.4.js"></script>
 <script>
@@ -28,8 +31,8 @@
 		init:function($elem){
 			if($elem.is(":hidden")){
 				$elem.data('status','hidden')
-			}else if ($elem.is(":show")) {
-				$elem.data('status','show')
+			}else{
+				$elem.data('status','shown')
 			}
 		},
 		show:function($elem){
@@ -47,6 +50,38 @@
 			$elem.trigger('hidden').data('status','hidden')
 		}
 	}
+	var js = {
+		init:function($elem){
+			$elem.removeClass('transition')
+			if($elem.is(":hidden")){
+				$elem.data('status','hidden')
+			}else{
+				$elem.data('status','shown')
+			}
+		},
+		show:function($elem){
+			if ($elem.data('status') == 'shown') return;
+			if ($elem.data('status') == 'show') return;
+			$elem.data('status','show').trigger('show')
+			/*$elem.show();
+			$elem.trigger('shown').data('status','show')*/
+			$elem.stop();
+			$elem.fadeIn();
+			$elem.trigger('shown').data('status','show')
+		},
+		hide:function($elem){
+			if ($elem.data('status') == 'hidden') return;
+			if ($elem.data('status') == 'hide') return;
+			$elem.data('status','hide').trigger('hide')
+			/*$elem.hide();
+			$elem.trigger('hidden').data('status','hidden')*/
+			$elem.stop();
+			$elem.fadeOut();
+			$elem.trigger('hidden').data('status','hidden')
+		}
+	}
+
+
 	var $elem = $('div')
 	
 	$elem.on('show shown hide hidden',function(ev){
@@ -66,12 +101,19 @@
 		}
 	})
 
-	slient.init($elem);
+	/*slient.init($elem);
 	$('button').eq(0).on('click',function(){
 		slient.show($elem)
 	})
 	$('button').eq(1).on('click',function(){
 		slient.hide($elem)
+	})*/
+	js.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.show($elem)
+	})
+	$('button').eq(1).on('click',function(){
+		js.hide($elem)
 	})
 </script>
 </html>

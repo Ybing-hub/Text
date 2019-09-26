@@ -24,8 +24,40 @@
 				</li>
 			</ul>
 			<ul class="nav-right fr">
-				<li class="dropdown" data-active="menu">
+				<li class="dropdown fl" data-active="menu">
 					<a href="#" class="dropdown-toggle link">我的宝贝
+						<i class="fa dropdown-arrow transtion">&#xf107;</i></a>
+					<ul class="dropdown-layer">
+						<li class="menu-item">
+							<a href="#">已买到的宝贝</a>
+						</li>
+						<li class="menu-item">
+							<a href="#">我的足迹</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown fl" data-active="menu" data-url="data/nav-data/center.json">
+					<a href="#" class="dropdown-toggle link">
+						卖家中心
+						<i class="fa dropdown-arrow transtion">&#xf107;</i></a>
+					<ul class="dropdown-layer">
+						<img src="images/loading.gif" class="dropdown-load" alt="">
+						<!--  
+						<li class="menu-item">
+							<a href="#">已买到的宝贝</a>
+						</li>
+						<li class="menu-item">
+							<a href="#">我的足迹</a>
+						</li>
+						-->
+					</ul>
+				</li>
+				<li class="fl" data-active="menu">
+					<a href="#" class="dropdown-toggle link">商品分类
+					</a>
+				</li>
+				<li class="dropdown fl" data-active="menu">
+					<a href="#" class="dropdown-toggle link">网站导航
 						<i class="fa dropdown-arrow transtion">&#xf107;</i></a>
 					<ul class="dropdown-layer">
 						<li class="menu-item">
@@ -90,5 +122,7 @@
 	<!-- 楼层5结束 -->
 </body>
 <script src="js/jquery-1.12.4.js"></script>
-<script src="js/index.js"></script>
+<script src="js/showHide.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/index-jQuery实现下拉功能.js"></script>
 </html>

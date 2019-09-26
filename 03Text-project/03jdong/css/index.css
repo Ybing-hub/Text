@@ -26,6 +26,12 @@
 	border: 1px solid #f3f5f7;
 	border-top: none;
 }
+.nav .dropdown{
+	margin-left: 10px;
+}
+.nav .dropdown-load{
+	padding: 19px;
+}
 /*.dropdown:hover .dropdown-layer{
 	display: block;
 }

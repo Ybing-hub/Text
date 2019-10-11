@@ -116,7 +116,7 @@
 					
 				})
 				*/
-				js._costimInit($elem,{
+				js._customInit($elem,{
 					borderLeftWidth:0,
 					paddingLeft:0,
 					width:0,
@@ -134,7 +134,7 @@
 					})
 				})
 				*/
-				js._costimShow($elem)
+				js._customShow($elem)
 			},
 			hide:function($elem){
 				/*
@@ -152,7 +152,7 @@
 					})
 				})
 				*/
-				js._costimHide($elem,{
+				js._customHide($elem,{
 					borderLeftWidth:0,
 					paddingLeft:0,
 					width:0,
@@ -163,7 +163,7 @@
 		},
 		fadeSlideLeftRight:{
 
-			init:function(){
+			init:function($elem){
 				/*
 				$elem.removeClass('transition')
 				
@@ -176,7 +176,7 @@
 					opacity:$elem.css('opacity')
 				}
 				$elem.data('styles',styles)
-				*/
+				
 				init($elem,function(){
 					$elem.css({
 						borderLeftWidth:0,
@@ -186,7 +186,15 @@
 						borderRightWidth:0,
 						opacity:0
 					})
-					
+				})
+				*/
+				js._customInit($elem,{
+					borderLeftWidth:0,
+					paddingLeft:0,
+					width:0,
+					paddingRight:0,
+					borderRightWidth:0,
+					opacity:0
 				})
 			},
 			show:function($elem){
@@ -199,7 +207,7 @@
 					})
 				})
 				*/
-				js._costimShow($elem)
+				js._customShow($elem)
 			},
 			hide:function($elem){
 				/*
@@ -218,7 +226,7 @@
 					})
 				})
 				*/
-				js._costimHide($elem,{
+				js._customHide($elem,{
 					borderLeftWidth:0,
 					paddingLeft:0,
 					width:0,
@@ -248,7 +256,7 @@
 		})
 	}
 
-	js._costimInit = function($elem,options){
+	js._customInit = function($elem,options){
 		$elem.removeClass('transition')
 		var styles = {}
 		for(key in options){
@@ -261,7 +269,7 @@
 			$elem.css(options)
 		})
 	}
-	js._costimShow = function($elem){
+	js._customShow = function($elem){
 		show($elem,function(){
 			$elem.show();
 			$elem.stop();
@@ -270,7 +278,7 @@
 			})
 		})
 	}
-	js._costimHide = function($elem,options){
+	js._customHide = function($elem,options){
 		hide($elem,function(){
 			$elem.stop();
 			$elem.animate(options,function(){
@@ -318,7 +326,8 @@
    	})
    	$('button').eq(1).on('click',function(){
    		js.slideDownUp.hide($elem);
-   	})*/
+   	})
+   	*/
    	/*
    	js.slideLeftRight.init($elem);
   	$('button').eq(0).on('click',function(){
@@ -328,7 +337,7 @@
    		js.slideLeftRight.hide($elem);
    	})
    	*/
-
+   	
    	js.fadeSlideLeftRight.init($elem);
   	$('button').eq(0).on('click',function(){
    		js.fadeSlideLeftRight.show($elem);

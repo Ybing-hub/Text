@@ -37,7 +37,7 @@
 	
 	var $elem = $('.box');
 	// 初始化插件
-	$elem.showHide({js:true,mode:"slideLeftRight"});
+	$elem.showHide({js:true,mode:"fadeSlideLeftRight"});
 	$elem.on('show shown hide hidden',function(ev){
 		if(ev.type == 'show'){
 			console.log('show...')
@@ -50,10 +50,10 @@
 		}
 	})
 	$('button').eq(0).on('click',function(){
-		// console.log($elem.showHide('show'));
+		$elem.showHide('show');
 	})
 	$('button').eq(1).on('click',function(){
-		// $elem.showHide('hide');
+		$elem.showHide('hide');
 	})
 	
 	 

@@ -8,28 +8,31 @@
 	
 </body>
 <script type="text/javascript">
-	function setCookie(key,value,iDate){
+	function setCookie(key,val,iDate){
         var oDate = new Date();
         oDate.setDate(oDate.getDate() + iDate);
-        document.cookie = key+"="+value+";expires="+oDate;
+        document.cookie = key+"="+val+";expires="+oDate;
     }
-    setCookie('name','tom')
-    setCookie('age',18)
-    setCookie('date',10)
+    setCookie('name','tom',10)
+    setCookie('age','18',10)
+    setCookie('sex','male',10)
     function getCookie(key){
+    	// console.log(document.cookie)
     	var str = document.cookie;
     	var arr1 = str.split(';')
     	for(var i = 0;i<arr1.length;i++){
     		var arr2 = arr1[i].split('=')
+    		// console.log(arr2)
 			for(var j = 0;j<arr1[i].length;j++){
-				if (arr2[0].trim() == name.trim()) {
-					return arr2[0];
+				// console.log(arr2[j])
+				if (key.trim() == arr2[0].trim()) {
+					return arr2[1];
 					break;
 				}
 			}
 		}
 	}
-    getCookie();
+     console.log(getCookie('sex'))
 	// console.log('name')
 	// console.log('age')
 	// console.log('')
@@ -37,5 +40,9 @@
 	oDate.setDate(oDate.getDate()+10)
 	document.cookie= "username=Tom;expires="+oDate;
 	document.cookie = "age=20"*/
+	function removeCookie(key){
+		setCookie(key,false,-1)
+	}
+	removeCookie('age');
 </script>
 </html>

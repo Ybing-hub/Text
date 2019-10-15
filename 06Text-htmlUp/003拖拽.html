@@ -9,26 +9,29 @@
 			padding: 0;
 		}
 		#box{
-			width: 400px;
-			height: 400px;
+			width: 200px;
+			height: 200px;
 			background-color: cyan;
 		}
 		#box1{
-			width: 200px;
-			height: 200px;
+			width: 100px;
+			height: 100px;
 			background-color: red;
 		}
 	</style>
 </head>
 <body>
 	<div id="box"></div>
-	<div id="box1"></div>
+	<div id="box1" draggable=true></div>
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-	    $('#box1').on('drop',function(){
-	    	
+	    $('#box').on('drop',function(){
+	    	console.log('aa')
+	    	$('#box').append($('#box1'))
+	    }).on('dragover',function(ev){
+	    	ev.preventDefault();
 	    })
 	})
 </script>	

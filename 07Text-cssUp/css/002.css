@@ -1,0 +1,25 @@
+.single {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px;
+  border-color: transparent transparent transparent #ff0000;
+}
+.box1 {
+  font-size: 20px;
+}
+.box1 ul {
+  width: 100px;
+  height: 100px;
+  color: green;
+}
+.box1 ul li {
+  width: 100px;
+  float: left;
+}
+.box1 ul li a {
+  text-decoration: none;
+}
+.box1 ul li:hover {
+  background-color: blue;
+}

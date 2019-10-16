@@ -1,0 +1,27 @@
+body{
+	background-color: cyan;
+}
+@w:200px;
+@h:200px;
+@c:red;
+.box{
+	width: @w;
+	height: @h;
+	background-color: @c;
+	margin-bottom: 8px;
+}
+.box1{
+	width: @w;
+	height: @h;
+	background-color: @c;
+	margin-bottom: 8px;
+}
+.border-ra(@x){
+	border-radius: @x;
+}
+.box2{
+	width: @w;
+	height: @h;
+	background-color: @c;
+	.border-ra(20px);
+}

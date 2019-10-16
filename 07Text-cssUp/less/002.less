@@ -1,0 +1,47 @@
+@w:0;
+@h:0;
+@c:red;
+.single(@d,@bw,@c){
+	width: @w;
+	height: @h;
+	border-style: solid;
+}
+.single(top,@bw,@c){
+	border-width: @bw;
+	border-color:@c transparent transparent transparent;
+}
+.single(bottom,@bw,@c){
+	border-width: @bw;
+	border-color: transparent transparent @c transparent;
+}
+.single(left,@bw,@c){
+	border-width: @bw;
+	border-color: transparent transparent transparent @c;
+}
+.single(right,@bw,@c){
+	border-width: @bw;
+	border-color: transparent @c transparent transparent;
+}
+.single{
+	.single(left,50px,red)
+}
+.box1{
+	font-size: 20px;
+	ul{
+		width: 100px;
+		height: 100px;
+		color: green;
+		li{
+			width: 100px;
+			// height: 100px;
+			float: left;
+			a{	
+				text-decoration: none;
+			}
+			&:hover{
+				background-color: blue;
+			}
+		}
+		
+	}
+}

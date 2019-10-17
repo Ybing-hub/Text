@@ -1,0 +1,18 @@
+img{
+	float: left;
+	width: 20rem;
+}
+p{
+	font-size: 16px;
+}
+.rem(@attr,@val){
+	@{attr}:unit(@val / 10,px);
+}
+/*.rem(@attr,@val,@val2){
+	@{attr}:unit(@val / 10,px) (@val2 / 10,px);
+}*/
+img{
+	.rem(width,320);
+	// .rem(margin,10);
+	// .rem(margin,10,20);
+}

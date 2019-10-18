@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			display: flex;
+			height: 100vh;
+			flex-direction: column;
+		}
+		header{
+			background-color: blue;
+		}
+		nav{
+			background-color: yellow;
+		}
+		main{
+			background-color: #fff;
+		}
+		aside{
+			background-color: purple;
+		}
+		footer{
+			background-color: pink;
+		}
+		main{
+			flex-grow: 1;
+		}
+
+		section{
+			display: flex;
+			flex-grow: 1;
+			width: 100wh;
+		}
+		header,footer{
+			height: 10vh;
+		}
+		nav,aside{
+			width: 20wh;
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<section>
+		<nav>nav</nav>
+		<main>main</main>
+		<aside>aside</aside>
+	</section>
+	<footer>footer</footer>
+</body>
+</html>

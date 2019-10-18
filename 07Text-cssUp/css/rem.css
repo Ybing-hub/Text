@@ -1,13 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 img {
   float: left;
-  width: 20rem;
+  width: 4.6875rem;
 }
 p {
-  font-size: 16px;
+  font-size: 0.75rem;
 }
-/*.rem(@attr,@val,@val2){
-	@{attr}:unit(@val / 10,px) (@val2 / 10,px);
-}*/
 img {
-  width: 32px;
+  float: left;
+  width: 4rem;
+  margin: 0.26666667rem 0.8rem 0.8rem;
+}
+p {
+  font-size: 0.64rem;
 }

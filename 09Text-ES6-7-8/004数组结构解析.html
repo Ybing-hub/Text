@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//不同的写法
+	/*
+	let a = 1;
+	let b = 2;
+	let c = 3;
+	console.log(a,b,c)
+	*/
+	/*
+	let a = 1,b = 2,c = 3; 
+	console.log(a,b,c);
+	*/
+	/*
+	let [a,b,c] = [4,2,3]
+	console.log(a,b,c);
+	*/
+	/*
+	let [a,b,c] = [1,[2,3],4]
+	console.log(a,b,c);
+	*/
+	let [a = 111,b,c = 222] = [222,555]
+	console.log(a,b,c);
+</script>
+</html>

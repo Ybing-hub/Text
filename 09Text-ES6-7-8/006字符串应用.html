@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div id="content"></div>
+</body>
+<script type="text/javascript">
+	var arr = ['Tom','jane','any','jike']
+	var oBtn = document.getElementById('btn')
+	var oContent = document.getElementById('content')
+	oBtn.onclick = function(){
+		var html = '<ul>'
+		for(let i = 0;i<arr.length;i++){
+			// html += '<li>'+arr[i]+'</li>'
+			html += `<li>${arr[i]}</li>`;
+		}
+		html += '</ul>'
+		oContent.innerHTML = html;
+	}
+</script>
+</html>

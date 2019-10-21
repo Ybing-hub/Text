@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var obj = {
+		name:'jane',
+		age:18,
+		friends:{name:'kangkang',age:20},
+		animal:['cat','dog','niuh']
+	}
+	/*
+	var obj1 = obj;
+	obj1.name = 'make';
+	obj1.age = 20
+	*/
+	let obj1 = [{...obj}]
+	obj1.name = 'make';
+	obj1.age = 20
+	console.log(obj)
+	console.log(obj1)
+</script>
+</html>

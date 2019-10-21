@@ -16,4 +16,9 @@
 .link:hover{
 	color: red !important;
 }
-
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}

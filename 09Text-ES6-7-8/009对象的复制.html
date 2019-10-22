@@ -7,6 +7,7 @@
 <body>
 	
 </body>
+<script type="text/javascript" src="../05Text-jQuery/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 	var obj = {
 		name:'jane',
@@ -19,10 +20,23 @@
 	obj1.name = 'make';
 	obj1.age = 20
 	*/
+	/*
 	let obj1 = [{...obj}]
-	obj1.name = 'make';
-	obj1.age = 20
+	obj1.friends = 'make';
+	obj1.animal = 'tiger';
+	*/
+	/*
+	let obj2 = JSON.parse(JSON.stringify(obj))
+	obj2.friends = 'make';
+	obj2.animal.push('tiger');
 	console.log(obj)
-	console.log(obj1)
+	// console.log(obj1)
+	console.log(obj2)
+	*/
+	let obj2 = $.extend(true,{},obj)
+	obj2.friends = 'make';
+	obj2.animal.push('tiger');
+	console.log(obj)
+	console.log(obj2)
 </script>
 </html>

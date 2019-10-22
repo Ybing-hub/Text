@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	let arr = [2,55,22,114,2,33,55,11,22]
+	console.log(arr)
+	let s = new Set(arr)
+	var arr1 = [...s];
+	console.log(arr1)
+
+	var arr2 = []
+	for(let i = 0;i<arr.length;i++){
+		if (arr2.indexOf(arr[i],0) == -1) {
+			arr2.push(arr[i])
+		}
+	}
+	console.log(arr2)
+
+	function unArray(){
+		var arr3 = []
+		var obj = {}
+		for(let key in arr){
+			arr[key] = ''
+		}
+		console.log(obj)
+	}
+	unArray()
+</script>
+</html>

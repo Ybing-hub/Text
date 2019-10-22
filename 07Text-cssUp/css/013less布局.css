@@ -1,0 +1,33 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  margin-top: -50px;
+}

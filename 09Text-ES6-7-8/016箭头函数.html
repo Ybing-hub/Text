@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016箭头函数.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+    let fn = (x,y)=>{
+    console.log(x,y);
+    return x + y;
+    }
+    // console.log(fn(2,3))
+    let show = n1 => n1+10;
+    // console.log(show(11))
+    let arr = [22,11,32,44,64,55,88,66]
+
+    /*arr.sort(function(n1,n2){
+    	return n1-n2;
+    })*/
+    /*{
+    	if (n1>n2) return 1;
+    	if (n1<n2) return -1;
+    	if (n1=n2) return 0;
+    }*/
+    let arr1 = arr.sort((n1,n2) => n1-n2)
+    console.log('---arr---',arr)
+    console.log('---arr1---',arr1)
+</script>
+</html>

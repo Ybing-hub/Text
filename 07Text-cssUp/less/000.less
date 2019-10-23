@@ -1,0 +1,54 @@
+.cont{
+	font-size: ~'calc(20px+20px)';
+	color: red;
+}
+@w:100px;
+@h:100px;
+@c:red;
+@l:left;
+@r:right;
+.box{
+	width: @w;
+	height: @h;
+	background-color: @c;
+	margin-bottom: 10px;
+	float: @l;
+	margin-right: 20px;	
+}
+.box1{
+	.box;
+	margin-bottom: 10px;
+}
+.box2{
+	.box;
+	background-color: orange;
+	border: 1px solid #000;
+}
+.box3{
+	.box;
+	border: 1px solid #000;
+	background-color: yellow;
+	-o-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:10px;
+} 
+.box4{
+	.box;
+	background-color: green;
+	border-radius: 50%;
+}
+.box5{
+	.box;
+	background-color: cyan;
+	border-radius: 20px;
+}
+.box6{
+	.box;
+	background-color: blue;
+	border-radius: 30px;
+}
+.box7{
+	.box;
+	background-color: purple;
+	border-radius: 40px;
+}

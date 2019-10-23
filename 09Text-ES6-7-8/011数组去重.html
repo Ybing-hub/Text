@@ -9,10 +9,10 @@
 </body>
 <script type="text/javascript">
 	let arr = [2,55,22,114,2,33,55,11,22]
-	console.log(arr)
+	// console.log(arr)
 	let s = new Set(arr)
 	var arr1 = [...s];
-	console.log(arr1)
+	// console.log(arr1)
 
 	var arr2 = []
 	for(let i = 0;i<arr.length;i++){
@@ -20,16 +20,19 @@
 			arr2.push(arr[i])
 		}
 	}
-	console.log(arr2)
+	// console.log(arr2)
 
-	function unArray(){
+	function unArray(arr){
 		var arr3 = []
 		var obj = {}
-		for(let key in arr){
-			arr[key] = ''
+		for(let i = 0;i<arr.length;i++){
+			obj[arr[i]] = '';
 		}
-		console.log(obj)
+		for(let key in obj){
+			arr3.push(key*1)
+		}
+		return arr3
 	}
-	unArray()
+	console.log(unArray(arr))
 </script>
 </html>

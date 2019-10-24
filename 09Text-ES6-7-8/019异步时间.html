@@ -10,8 +10,14 @@
 <script type="text/javascript" src="../05Text-jQuery/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 	//1 ajax事件
-	$.get('https://api.github.com/users/gityaobing',function(data){
-		console.log(data)
+	$.get('https://api.github.com/users/AIcolonel',function(data){
+		// console.log(data);
+		$.get(data.followers_url,function(data){
+			console.log(data)
+			$.get(data.followers_url,function(data){
+				console.log(data[0].avatar_url)
+			})
+		})
 	})
 	/*
 	//2定时器

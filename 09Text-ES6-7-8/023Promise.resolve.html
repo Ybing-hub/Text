@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	const p = new Promise(function(resolve,reject){
+		setTimeout(function(){
+			resolve('get success')
+		},1000)
+	})
+	console.log(Promise.resolve(p))
+	var obj = {
+		/*
+		then:function(){
+			console.log('obj...')
+		}
+		*/
+		show:function(){
+			console.log('show')
+		}
+	}
+	Promise.resolve(obj)
+</script>
+</html>

@@ -15,6 +15,38 @@
 		friends:{name:'kangkang',age:20},
 		animal:['cat','dog','niuh']
 	}
+	function getDataType(data){
+		if (data instanceof Array) {
+			return 'array'
+		}
+		if (data instanceof Object) {
+			return 'object'
+		}
+	}
+	function deepData(data){
+		const type = getDataType(data)
+		let result;
+		if (type == 'array') {
+			result = []
+		}
+		if (type == 'object') {
+			result = {}
+		}
+		for(let key in data){
+			if (getDataType(data[key]) == 'array' || getDataType(data[key]) == 'object') {
+				result[key] = deepData(data[key])
+			}else{
+				result[key] = data[key]
+			}
+		}
+		return result
+	}
+	const obj2 = deepData(obj)
+	obj2.name = 'maike';
+	obj2.friends.name = 'peter'
+	obj2.animal.push('sheep')
+	console.log('--obj--',obj)
+	console.log('--obj2--',obj2)
 	/*
 	var obj1 = obj;
 	obj1.name = 'make';
@@ -33,10 +65,13 @@
 	// console.log(obj1)
 	console.log(obj2)
 	*/
+	/*
 	let obj2 = $.extend(true,{},obj)
 	obj2.friends = 'make';
 	obj2.animal.push('tiger');
 	console.log(obj)
 	console.log(obj2)
+	*/
+
 </script>
 </html>

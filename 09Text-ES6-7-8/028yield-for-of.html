@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028yield-for-of.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function * gen(){
+		yield 1;
+		yield 2;
+		yield 3;
+		yield 4;
+	}
+	const g = gen();
+	for(v of g){
+		console.log(v)
+	}
+</script>
+</html>

@@ -8,12 +8,16 @@
 	
 </body>
 <script type="text/javascript">
-	const p = new Promise(function(resolve,reject){
+	const p = Promise.resolve()
+	console.log(p)
+	const p1 = new Promise(function(resolve,reject){
 		setTimeout(function(){
 			resolve('get success')
 		},1000)
 	})
-	console.log(Promise.resolve(p))
+	console.log(p1)
+	const p2 = Promise.resolve(p1)
+	console.log(p2)
 	var obj = {
 		/*
 		then:function(){

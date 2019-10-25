@@ -13,18 +13,25 @@
 		return new Promise((resolve,reject) =>{
 			$.ajax({
 				url:url,
-				success:function(){
-					resolve('get data ok');
+				success:function(data){
+					resolve(data);
 				},
-				error:function(){
-					reject('get data err');
+				error:function(jqXHR,statusMsg){
+					reject(statusMsg);
 				}
 			})
 		})
 	}
 	getDataPromise('https://api.github.com/users/AIcolonel')
 	.then(data =>{
-		console.log(data)
+		return getDataPromise(data.followers_url)
+	})
+	.then(data =>{
+		// console.log(data)
+		return getDataPromise(data[5].followers_url)
+	})
+	.catch(err =>{
+		console.log(err)
 	})
 </script>
 </html>

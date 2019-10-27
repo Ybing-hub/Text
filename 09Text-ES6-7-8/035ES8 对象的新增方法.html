@@ -8,14 +8,12 @@
 	
 </body>
 <script type="text/javascript">
-	async function fn(){
-		return 'xx2'
+	var { keys } = Object
+	var obj = {
+		username:'kangkang',
+		age:18
 	}
-	// console.log(fn())
-	const promise = fn()
-	console.log(promise)
-	promise.then(data=>{
-		console.log(data)
-	})
+	console.log(Object.keys(obj))
+	
 </script>
 </html>

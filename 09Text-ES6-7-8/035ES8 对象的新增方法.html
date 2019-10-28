@@ -8,12 +8,20 @@
 	
 </body>
 <script type="text/javascript">
-	var { keys } = Object
+	var { keys,entries,values,getOwnPropertyDescriptors } = Object
 	var obj = {
 		username:'kangkang',
-		age:18
+		age:18,
+		sex:'male'
 	}
-	console.log(Object.keys(obj))
+	Object.defineProperty(obj,'legs',{
+		value:2,
+		enumerable:true
+	})
+	console.log(keys(obj))
+	console.log(entries(obj))
+	console.log(values(obj))
+	console.log(getOwnPropertyDescriptors(obj))
 	
 </script>
 </html>

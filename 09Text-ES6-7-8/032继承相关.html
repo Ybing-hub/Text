@@ -26,7 +26,7 @@
 		Person.call(this,name,age)//属性继承
 		this.major = major
 	}
-	Student.prototype = Object.create(Person.prototype)
+	Student.prototype = Object.create(Person.prototype)//方法继承
 	var s1 = new Student('kangkang',18,'软件')
 	console.log(s1)
 

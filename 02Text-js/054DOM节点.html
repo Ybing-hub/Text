@@ -13,8 +13,10 @@
 </body>
 <script>
 	var oUl = document.getElementById('ul1');
-	var aEle = oUl.firstChild;
-	console.log(aEle==oUl[0])
+	var aEle = oUl.children;
+	var aEle1 = oUl.firstChild;
+	console.log(aEle[0])
+	console.log(aEle1)
 	/*
 	var aEle = oUl.children;
 	for(var i=0;i<aEle.length;i++){

@@ -42,17 +42,21 @@
 		var val = oTxt.value;
 		var oLi = document.createElement('li');
 		var oA = document.createElement('a');
+		if (val == '') {
+			alert('请输入发布内容')
+		}else{
+			oLi.innerHTML = val;
+			oA.innerHTML = '删除';
+			oA.href = 'javascript:;'
 
-		oLi.innerHTML = val;
-		oA.innerHTML = '删除';
-		oA.href = 'javascript:;'
-
-		oA.onclick = function(){
-			oUl.removeChild(oLi);
+			oA.onclick = function(){
+				oUl.removeChild(oLi);
+			}
+			oLi.appendChild(oA);
+			oUl.insertBefore(oLi,oUl.firstChild)
+			oTxt.value = '';
 		}
-		oLi.appendChild(oA);
-		oUl.insertBefore(oLi,oUl.firstChild)
-		oTxt.value = '';
+		
 	}
 </script>
 </html>

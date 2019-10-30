@@ -30,12 +30,13 @@
 		else{
 			aLi[i].style.backgroundColor='#777'
 		}
-		aLi.onmouseover = function(){
+		aLi[i].onmouseover = function(){
 			oColor = this.style.backgroundColor;
 			this.style.backgroundColor='green';
+			console.log(oColor)
 		}
-		aLi.onmouseout = function(){
-			this.style.backgroundColor='oColor';
+		aLi[i].onmouseout = function(){
+			this.style.backgroundColor = oColor;
 		}
 	}
 </script>

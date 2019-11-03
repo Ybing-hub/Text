@@ -12,7 +12,7 @@ const emitter = new Myemitter();
 
 emitter.on('newListener',(eventName,callback)=>{
 	console.log('success function...')
-	console.log(eventName	)
+	console.log(eventName)
 	console.log(callback)
 })
 

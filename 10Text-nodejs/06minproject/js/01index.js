@@ -1,13 +1,13 @@
-(function($){
+;(function($){
 	//增
 	var $input = $('.todu-input')
 	$input.on('keydown',function(ev){
 		if (ev.keyCode == 13) {
 			$.ajax({
-				url:url,
+				url:'/add',
 				type:"post",
 				dataType:"json",
-				data:$input.val(),
+				// data:$input.val(),
 				success:function(data){
 					console.log(data)
 				},
@@ -18,6 +18,7 @@
 		}
 	})
 	//删
+	/*
 	$('.todu-list').on('delete','.todu-item',function(){
 		if (ev.keycode == 1) {
 			$.ajax({
@@ -29,4 +30,5 @@
 			})
 		}
 	})
+	*/
 })(jQuery)

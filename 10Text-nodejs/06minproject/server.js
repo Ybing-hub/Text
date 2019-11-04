@@ -1,15 +1,19 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
+const url = require('url');
 const mime = require('./mime.json')
+
 const server = http.createServer((req,res)=>{
 	console.log(req.url)
 	// console.log(req.method)
 	// res.write('hello world')
 	// res.end('ok')
+	const parse = url.parse(req.url,true)
 	const filePath = req.url;
+	console.log(parse)
 
-	const filname = path.normalize(__dirname+/static/+filePath)
+	const filname = path.normalize(__dirname+filePath)
 
 	fs.readFile(filname,{endocing:'utf-8'},(err,data)=>{
 		if (err) {

@@ -21,6 +21,7 @@ input{
 	margin-bottom: 10px;
 	border-radius: 8px;
 	padding-left: 8px;
+	box-sizing: border-box;
 }
 .todu-item{
 	border-radius: 8px;

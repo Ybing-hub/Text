@@ -23,7 +23,7 @@ input{
 	padding-left: 8px;
 	box-sizing: border-box;
 }
-.todu-item{
+.todo-item{
 	border-radius: 8px;
 	border-left: 2px solid #000;
 	list-style: none;
@@ -35,6 +35,6 @@ input{
 	padding-left: 8px;
 	box-sizing: border-box;
 }
-.todu-item:hover{
+.todo-item:hover{
 	background-color: #c0c;
 }

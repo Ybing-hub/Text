@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>说出你的请求方法</h1>
+	<button id="get1">get1</button>
+	<button id="get2">get2</button>
+</body>
+<script type="text/javascript" src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$('#get1').on('click',function(){
+		$.ajax({
+			url:'/',
+			type:'get',
+			success:function(){
+				console.log('get index')
+			}
+		})
+	})
+	$('#get2').on('click',function(){
+		$.ajax({
+			url:'/',
+			type:'get',
+			success:function(){
+				console.log('post index')
+			}
+		})
+	})
+</script>
+</html>

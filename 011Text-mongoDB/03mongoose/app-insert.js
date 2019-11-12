@@ -56,16 +56,17 @@ db.once('open',function(){
 	})
 	*/
 	//1.2一下全部插入数据insertMany
-	/*
-	UserModel.insertMany([{name:"jike",age:25,major:"computer"},{name:"mary",age:24,major:"sport"}],(err,dosc)=>{
+	
+	UserModel.insertMany([{name:"anmy",age:22,major:"computer"},{name:"peter",age:29,major:"sport"}],(err,dosc)=>{
 		if (err) {
 			console.log('find err',err.message)
 		}else{
 			console.log(dosc)
 		}
 	})
-	*/
+	
 	//1.3一个一个插入数据create
+	/*
 	UserModel.create({name:"peter",age:18,major:"ball"})
 	.then(data =>{
 		console.log(data)
@@ -73,9 +74,10 @@ db.once('open',function(){
 	.catch(err=>{
 		console.log(err.message)
 	})
+	*/
 	//查找
 	/*
-	UserModel.find({age:21},(err,dosc)=>{
+	UserModel.find({age:21},'name age -_id',(err,dosc)=>{
 		if (err) {
 			console.log('find err',err.message)
 		}else{

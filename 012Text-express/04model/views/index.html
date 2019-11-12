@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<h1>全栈开发{{content}}</h1>
+	<p>
+		{% if age == 10 %}
+		我今年10岁
+		{% elseif age == 18 %}
+		我今年18岁
+		{% else %}
+		你在猜猜
+		{% endif %}
+	</p>
+	<ul>
+		{% for key,val in names %}
+  		<li>{{ key }} -- {{ val }}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

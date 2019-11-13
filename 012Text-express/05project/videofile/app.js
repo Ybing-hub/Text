@@ -1,6 +1,22 @@
 const express = require('express')
 const app = express()
 const swig = require('swig')
+const mongoose = require('mongoose')
+
+
+//链接数据库
+mongoose.connect('mongodb://localhost/it', { useUnifiedTopology: true,useNewUrlParser: true })
+
+const db = mongoose.connection
+db.on('error',(err)=>{
+	console.log('connect db err ...')
+	throw err
+})
+db.once('open', function() {
+  	console.log('connect success !!!')
+})
+
+
 app.use(express.static('public'))
 //开发阶段设置不走缓存
 swig.setDefaults({
@@ -16,18 +32,6 @@ app.get('/',(req,res)=>{
     //4.渲染模板
     //第一个参数是相对于模板目录的文件
     //第二个参数是传递给模板的数据
-    res.render('index',{
-        title:'跨猪网',
-        content:'我是内容',
-        age:19,
-        name:['tom','mary','jane','kangkang']
-    })
+    res.render('index')
 })
-
-app.get('/list',(req,res)=>{
-    res.render('list')
-})
-app.get('/son',(req,res)=>{
-    res.render('son')
-})
-app.listen(3000,()=>console.log('express listen 3000'))
+app.listen(3000,()=>console.log('express listen http://127.0.0.1:3000'))

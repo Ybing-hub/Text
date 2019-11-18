@@ -17,7 +17,8 @@ router.post('/register',(req,res)=>{
 		}else{
 			UserModel.insertMany({
 				username:username,
-				password:hmac(password)
+				password:hmac(password),
+				isAdmin:false
 			})
 			.then(result=>{
 				res.json({
@@ -49,9 +50,11 @@ router.post('/login',(req,res)=>{
 	UserModel.findOne({username:username,password:hmac(password)},'-password')
 	.then(user=>{
 		if(user) {
+			req.session.userInfo = user
+			console.log(req.session.userInfo)
 			res.json({
 				code:1,
-				message:'登陆成功',
+				message:'登录成功',
 				user:user
 			})
 		}else{
@@ -68,5 +71,12 @@ router.post('/login',(req,res)=>{
 		})
 	})
 })
-
+//退出登录
+router.get('/logout',(req,res)=>{
+	req.session.destroy()
+	res.json({
+		code:1,
+		message:'退出成功'
+	})
+})
 module.exports = router

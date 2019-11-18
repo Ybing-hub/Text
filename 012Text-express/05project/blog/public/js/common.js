@@ -95,11 +95,13 @@
 				}
 			})
 			.done(function(data){
-				var $span = $userInfo.find('span').html(data.user.username)
-				console.log($span)
 				if (data.code == '1') {
+					/*
+					$userInfo.find('span').html(data.user.username)
 					$userInfo.show()
 					$login.hide()
+					*/
+				window.location.reload()
 				}else{
 					$err.html(data.message)
 				}
@@ -111,4 +113,21 @@
 			})
 		}
 	})
+	/*
+	//退出登录
+	$('#logout').on('click',function(){
+		$.ajax({
+			url:'/user/logout',
+			type:'get'
+		})
+		.done(function(data){
+			if (data.code == '1') {
+				window.location.href = '/'
+			}
+		})
+		.fail(function(err){
+			$('logout').find('.err').html('请求失败，稍后再试')
+		})
+	})
+	*/
 })(jQuery);

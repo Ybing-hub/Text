@@ -16,26 +16,52 @@ router.get('/',(req,res)=>{
 	})
 })
 
-router.get('/user',(req,res)=>{
+router.get('/users',(req,res)=>{
+	
 	const limit = 3
-	let page = req.query.page/1
-
-	let skip = (page-1)*limit
-
-	UserModel.find({})
-	.skip(skip)
-	.limit(limit)
-	.then(users=>{
-		req.render('admin/user_list',{
-			userInfo:req.userInfo,
-			users:users
+	let page = req.query.page / 1
+	
+	if (isNaN(page)) {
+		page = 1
+	}
+	if (page == 0) {
+		page = 1
+	}
+	UserModel.countDocuments((err,count)=>{
+		// console.log(count)
+		let pages = Math.ceil(count / limit)
+		if (page > pages) {
+			page = pages
+		}
+		let skip = (page-1)*limit
+		let list = []
+		for(let i = 1;i<=pages;i++){
+			list.push(i)
+		}
+		UserModel.find({},'-password -__v')
+		.sort({_id:-1})
+		.skip(skip)
+		.limit(limit)
+		.then(users=>{
+			res.render('admin/user_list',{
+				userInfo:req.userInfo,
+				users:users,
+				page:page,
+				list:list,
+				pages:pages
+			})
 		})
-	})
-	.catch(err=>{
-		console.log(err)
+		.catch(err=>{
+			console.log(err)
+		})
 	})
 })
 
+router.get('/users',(req,res)=>{
+	res.render('/admin/category',{
+
+	})
+})
 
 
 module.exports = router

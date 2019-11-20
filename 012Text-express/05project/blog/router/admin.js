@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const UserModel = require('../models/user.js')
+const pagination = require('../util/pagination.js')
 
 router.use((req,res,next)=>{
 	if (req.userInfo.isAdmin) {
@@ -18,6 +19,28 @@ router.get('/',(req,res)=>{
 
 router.get('/users',(req,res)=>{
 	
+	const options = {
+		page:req.query.page / 1,
+		model:UserModel,
+		query:{},
+		projection:'-password -__v',
+		sort:{_id:-1}
+	}
+	pagination(options)
+	.then(result=>{
+		res.render('admin/user_list',{
+			userInfo:req.userInfo,
+			users:result.docs,
+			page:result.page,
+			list:result.list,
+			pages:result.pages,
+			url:'/admin/users'
+		})
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+	/*
 	const limit = 3
 	let page = req.query.page / 1
 	
@@ -55,6 +78,7 @@ router.get('/users',(req,res)=>{
 			console.log(err)
 		})
 	})
+	*/
 })
 
 router.get('/users',(req,res)=>{

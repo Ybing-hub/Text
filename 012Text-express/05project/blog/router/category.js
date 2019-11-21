@@ -88,7 +88,8 @@ router.get('/edit/:id',(req,res)=>{
 	CategoryModel.findById(id)
 	.then(category=>{
 		res.render('admin/category_add_edit'),{
-			userInfo:req.userInfo
+			userInfo:req.userInfo,
+			category
 		}
 	})
 	.catch(err=>{
@@ -125,7 +126,6 @@ router.post('/edit',(req,res)=>{
 						res.render('admin/ok',{
 							userInfo:req.userInfo,
 							message:'修改成功',
-							categories:categories,
 							url:'/category'
 						})
 					})
@@ -155,7 +155,7 @@ router.post('/edit',(req,res)=>{
 
 
 //处理分类管理--删除
-router.post('/delete/:id',(req,res)=>{
+router.get('/delete/:id',(req,res)=>{
 	const id = req.params.id
 	CategoryModel.deleteOne({_id:id})
 	.then(category=>{
@@ -168,7 +168,8 @@ router.post('/delete/:id',(req,res)=>{
 	.catch(err=>{
 		res.render('admin/err',{
 			userInfo:req.userInfo,
-			message:'删除失败,请稍后再试'
+			message:'删除失败,请稍后再试',
+			url:'/category'
 		})
 	})
 })

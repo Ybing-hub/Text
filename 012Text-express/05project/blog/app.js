@@ -76,5 +76,6 @@ app.use('/',require('./router/index.js'))
 app.use('/user',require('./router/user.js'))
 app.use('/admin',require('./router/admin.js'))
 app.use('/category',require('./router/category.js'))
+app.use('/article',require('./router/article.js'))
 
 app.listen(3000,()=>console.log('express listen http://127.0.0.1:3000'))

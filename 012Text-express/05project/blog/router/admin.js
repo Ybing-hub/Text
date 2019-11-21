@@ -81,11 +81,4 @@ router.get('/users',(req,res)=>{
 	*/
 })
 
-router.get('/users',(req,res)=>{
-	res.render('/admin/category',{
-
-	})
-})
-
-
 module.exports = router

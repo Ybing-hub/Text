@@ -26,8 +26,8 @@ async function pagination(options){
 	if (page > pages) {
 		page = pages
 	}
-	if (pages == 0) {
-		pages = 1
+	if (page == 0) {
+		page = 1
 	}
 	let list = []
 	for(let i = 1;i<=pages;i++){

@@ -19,6 +19,7 @@
         <th>分类</th>
         <th>创建时间</th>
         <th>点击量</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -27,10 +28,11 @@
           <td>{{ article.title }}</td>
           <td>{{ article.user }}</td>
           <td>{{ article.category }}</td>
-          <td>{{ article.createdAt }}</td>
+          <!-- <td>{{ article.createdAt }}</td> -->
+          <td>{{ article.createdTime }}</td>
           <td>{{ article.click }}</td>
           <td>
-            <a href="/detail">详情</a>
+            <a href="/detail/{{ article._id.toString() }}">详情</a>
             <a href="/article/edit/{{ article._id.toString() }}">编辑</a>
             <a href="/article/delete/{{ article._id.toString() }}" class="del">删除</a>
           </td>

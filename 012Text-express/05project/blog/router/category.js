@@ -62,7 +62,6 @@ router.post('/add',(req,res)=>{
 				res.render('admin/ok',{
 					userInfo:req.userInfo,
 					message:'新增成功',
-					categories:categories,
 					url:'/category'
 				})
 			})

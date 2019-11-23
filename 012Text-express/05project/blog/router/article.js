@@ -16,12 +16,25 @@ router.use((req,res,next)=>{
 })
 //显示文章管理首页
 router.get('/',(req,res)=>{
+	ArticleModel.getPaginationData(req)
+	.then(result=>{
+		res.render('admin/article_list',{
+			userInfo:req.userInfo,
+			articles:result.docs,
+			page:result.page,
+			list:result.list,
+			pages:result.pages,
+			url:'/article'
+		})
+	})
+	/*
 	const options = {
 		page:req.query.page / 1,
 		model:ArticleModel,
 		query:{},
 		projection:'-__v',
-		sort:{_id:1}
+		sort:{_id:1},
+		populates:[{ path: 'user', select: 'username' },{ path: 'category', select: 'name' }]
 	}
 	pagination(options)
 	.then(result=>{
@@ -37,6 +50,7 @@ router.get('/',(req,res)=>{
 	.catch(err=>{
 		console.log(err)
 	})
+	*/
 })
 
 //显示文章管理--新增

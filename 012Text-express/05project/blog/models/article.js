@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const moment = require('moment')
+const pagination = require('../util/pagination.js')
 //1.定义文档模型
 const ArticleSchema = new mongoose.Schema({
 	title:{
@@ -33,6 +34,17 @@ const ArticleSchema = new mongoose.Schema({
 	  // return this.createdAt.toLocaleString()
 	  return moment(this.createdAt).format('YYYY-MM-DD HH:mm:ss')
 	});
+	ArticleSchema.statics.getPaginationData = function(req,query={}){
+			const options = {
+			page:req.query.page / 1,
+			model:ArticleModel,
+			query:query,
+			projection:'-__v',
+			sort:{_id:1},
+			populates:[{ path: 'user', select: 'username' },{ path: 'category', select: 'name' }]
+		}
+		return pagination(options)
+	}
 
 //2.根据文档模型生成对应模型(集合)
 //2.1第一个参数就是需要生成的集合名称,mongoose子自动将集合名称转化为复数

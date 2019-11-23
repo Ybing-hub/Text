@@ -26,8 +26,8 @@
       {% for article in articles %}
         <tr>
           <td>{{ article.title }}</td>
-          <td>{{ article.user }}</td>
-          <td>{{ article.category }}</td>
+          <td>{{ article.user.username }}</td>
+          <td>{{ article.category.name }}</td>
           <!-- <td>{{ article.createdAt }}</td> -->
           <td>{{ article.createdTime }}</td>
           <td>{{ article.click }}</td>

@@ -5,6 +5,7 @@
 	query查询条件
 	projection显示字段
 	sort排序方式
+	populates联合查询
  }
 
  */
@@ -12,7 +13,7 @@
 
 async function pagination(options){
 	const limit = 3
-	let { page,model,query,projection,sort} = options
+	let { page,model,query,projection,sort,populates} = options
 
 	if (isNaN(page)) {
 		page = 1
@@ -34,8 +35,13 @@ async function pagination(options){
 		list.push(i)
 	}
 	let skip = (page-1)*limit
-
- 	const docs = await model.find(query,projection).sort(sort).skip(skip).limit(limit)
+	let result = model.find(query,projection)
+	if (populates) {
+		populates.forEach(function(populate){
+			return result.populate(populate)
+		})
+	}
+ 	const docs = await result.sort(sort).skip(skip).limit(limit)
 	
 	return {
 		docs:docs,

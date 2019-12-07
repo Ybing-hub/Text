@@ -1,0 +1,11 @@
+#btn-admin{
+	float: right;
+	margin-right: -1200px;
+	margin-top: 8px;
+}
+.content{
+	min-height: 300px;
+}
+.ck-content{
+	min-height: 150px;
+}

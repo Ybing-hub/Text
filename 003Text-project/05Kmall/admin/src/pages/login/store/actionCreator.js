@@ -1,41 +1,56 @@
-/*
-* @Author: Chen
-* @Date:   2019-12-02 16:52:50
-* @Last Modified by:   Chen
-* @Last Modified time: 2019-12-03 17:45:26
-*/
-import axios from 'axios'
 import * as types from './actionTypes.js'
+import {message} from 'antd'
+import { saveUsername } from 'util'
+import axios from 'axios'
+import api from 'api'
 
-export const getChangeItemAction = (val)=>({
-	type:types.CHANGE_ITEM,
-	payload:val
+const getLoginStartAction = ()=>({
+	type:types.LOGIN_REQEST_START
 })
-export const getAddItemAction = ()=>({
-	type:types.ADD_ITEM
-})
-export const getDeleteItemAction = (index)=>({
-	type:types.DEL_ITEM,
-	payload:index
-})
-
-
-
-
-const getLoadInitAction = (data) =>({
-	type:types.LOAD_DATA,
-	payload:data
+const getLoginEndAction = ()=>({
+	type:types.LOGIN_REQEST_END
 })
 
-export const getRequestLoadDataAction = ()=>{
+export const getLoginAction = (values)=>{
 	return (dispatch,getState)=>{
-		axios.get('http://127.0.0.1:3000')
+		dispatch(getLoginStartAction())
+		values.role = 'admin'
+		api.login(values)
 		.then(result=>{
-			//派发action
-			dispatch(getLoadInitAction(result.data))
+			const data = result.data
+			if (data.code == 0) {
+				saveUsername(data.data.username)
+				
+				window.location.href = '/'
+			}
 		})
 		.catch(err=>{
-			console.log(err)
+			message.err(data.message)
 		})
+		.finally(()=>{
+			dispatch(getLoginEndAction())
+		})
+		/*
+		axios({
+			method:'post',
+			url:'http://127.0.0.1:3000/sessions/users',
+			withCredentials:true,
+			data:values
+		})
+		.then(result=>{
+			const data = result.data
+			if (data.code == 0) {
+				saveUsername(data.data.username)
+
+				window.location.href = '/'
+			}
+		})
+		.catch(err=>{
+			message.err(data.message)
+		})
+		.finally(()=>{
+			dispatch(getLoginEndAction())
+		})
+		*/
 	}
 }

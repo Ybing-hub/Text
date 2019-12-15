@@ -1,9 +1,3 @@
-/*
-* @Author: Tom
-* @Date:   2018-08-06 09:14:54
-* @Last Modified by:   Chen
-* @Last Modified time: 2019-12-03 19:38:07
-*/
 //项目入口文件
 const express = require('express');
 const bodyParser = require('body-parser');

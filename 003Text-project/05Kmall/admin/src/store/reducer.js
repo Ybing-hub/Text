@@ -1,13 +1,13 @@
-/*
-* @Author: Chen
-* @Date:   2019-12-01 17:24:50
-* @Last Modified by:   Chen
-* @Last Modified time: 2019-12-05 16:00:05
-*/
 // import { combineReducers } from 'redux'
 import {combineReducers} from 'redux-immutable'
-import {reducer as todolistReducer} from '../pages/todolist/store/index.js'
+import {reducer as loginReducer} from 'pages/login/store'
+import {reducer as homeReducer} from 'pages/home/store'
+import {reducer as UserReducer} from 'pages/user/store'
+import {reducer as categoryReducer} from 'pages/category/store'
 
 export default combineReducers({
-	todolist:todolistReducer
+	login:loginReducer,
+	home:homeReducer,
+	user:UserReducer,
+	category:categoryReducer
 })

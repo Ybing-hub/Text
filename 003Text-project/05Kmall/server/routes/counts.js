@@ -1,9 +1,3 @@
-/*
-* @Author: Tom
-* @Date:   2018-08-06 09:23:30
-* @Last Modified by:   Chen
-* @Last Modified time: 2019-12-05 10:24:41
-*/
 const Router = require('express').Router;
 
 const UserModel = require('../models/user.js');

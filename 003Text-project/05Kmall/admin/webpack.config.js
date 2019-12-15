@@ -1,9 +1,3 @@
-/*
-* @Author: Chen
-* @Date:   2019-11-25 19:16:58
-* @Last Modified by:   Chen
-* @Last Modified time: 2019-12-06 16:42:27
-*/
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
@@ -106,7 +100,9 @@ module.exports = {
     resolve:{
         alias:{
             pages:path.resolve(__dirname,'./src/pages'),
-            // util:path.resolve(__dirname,'./src/util'),
+            util:path.resolve(__dirname,'./src/util'),
+            common:path.resolve(__dirname,'./src/common'),
+            api:path.resolve(__dirname,'./src/api')
         }
     },
 	plugins:[

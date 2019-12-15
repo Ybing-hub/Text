@@ -1,9 +1,3 @@
-/*
-* @Author: Tom
-* @Date:   2018-08-06 09:23:30
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-25 10:09:18
-*/
 const Router = require('express').Router;
 const CategoryModel = require('../models/category.js');
 const pagination = require('../util/pagination.js');

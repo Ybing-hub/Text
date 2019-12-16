@@ -100,9 +100,6 @@ export const getUpdateNameAction = (id,newName)=>{
 		.catch(err=>{
 			console.log(err)
 		})
-		.finally(()=>{
-			dispatch(getPageEndAction())
-		})
 	}
 }
 
@@ -127,9 +124,6 @@ export const getUpdateMobileNameAction = (id,newMobileName)=>{
 		.catch(err=>{
 			console.log(err)
 		})
-		.finally(()=>{
-			dispatch(getPageEndAction())
-		})
 	}
 }
 //排序
@@ -153,9 +147,6 @@ export const getUpdateOrderAction = (id,newOrder)=>{
 		.catch(err=>{
 			console.log(err)
 		})
-		.finally(()=>{
-			dispatch(getPageEndAction())
-		})
 	}
 }
 //更新显示隐藏
@@ -178,9 +169,6 @@ export const getUpdateIsShowAction = (id,neWIsShow)=>{
 		})
 		.catch(err=>{
 			console.log(err)
-		})
-		.finally(()=>{
-			dispatch(getPageEndAction())
 		})
 	}
 }

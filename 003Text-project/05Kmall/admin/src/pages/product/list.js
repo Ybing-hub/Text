@@ -33,7 +33,7 @@ class CategoryList extends Component{
 		} = this.props
 
 		const columns = [{
-		        title: '分类名称',
+		        title: '商品名称',
 		        dataIndex: 'name',
 		        key: 'name',
 		        width:'40%',
@@ -50,7 +50,7 @@ class CategoryList extends Component{
 		        }
 		    },
 		    {
-		        title: '手机端分类名称',
+		        title: '分类名称',
 		        dataIndex: 'mobileName',
 		        key: 'mobileName',
 		        render:(mobileName,record)=>{
@@ -104,11 +104,11 @@ class CategoryList extends Component{
 				<Layout>
 					<Breadcrumb style={{ margin: '16px 0' }}>
 				          <Breadcrumb.Item>首页</Breadcrumb.Item>
-				          <Breadcrumb.Item>分类管理</Breadcrumb.Item>
-				          <Breadcrumb.Item>分类列表</Breadcrumb.Item>
+				          <Breadcrumb.Item>商品管理</Breadcrumb.Item>
+				          <Breadcrumb.Item>商品列表</Breadcrumb.Item>
 				    </Breadcrumb>
 				    <div className='btn'>
-				    	<Link to='/category/add'><Button type="primary">新增分类</Button></Link>
+				    	<Link to='/product/add'><Button type="primary">新增商品</Button></Link>
 				    </div>
 				    <div className='content'>
 					    <Table 

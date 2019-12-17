@@ -108,7 +108,7 @@ class CategoryList extends Component{
 				          <Breadcrumb.Item>商品列表</Breadcrumb.Item>
 				    </Breadcrumb>
 				    <div className='btn'>
-				    	<Link to='/product/add'><Button type="primary">新增商品</Button></Link>
+				    	<Link to='/product/add'><Button type="primary" className='btn add-btn'>添加商品</Button></Link>
 				    </div>
 				    <div className='content'>
 					    <Table 

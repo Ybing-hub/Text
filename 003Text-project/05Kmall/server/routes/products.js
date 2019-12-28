@@ -335,5 +335,26 @@ router.put("/isHot",(req,res)=>{
 		}
 	})
 })
-
+/*
+//删除商品
+router.delete('/list',(req,res)=>{
+	let query = {
+		_id:req.query.id
+	}
+	ProductModel
+	.deteleOne(query,"-__v -createdAt -updatedAt")
+	.then(product=>{
+		res.json({
+			code:0,
+			data:product
+		})
+	})
+	.catch(e=>{
+		res.json({
+			code:1,
+			message:'删除失败'
+		})
+	})
+})
+*/
 module.exports = router;

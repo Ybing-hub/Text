@@ -5,7 +5,7 @@ const hmac = require('../util/hmac.js')
 
 const router = Router();
 
-/*
+
 //用户退出
 router.get('/user',(req,res)=>{
 	req.session.destroy();
@@ -13,7 +13,7 @@ router.get('/user',(req,res)=>{
 		code:0,
 	})
 })
-*/
+
 
 //用户登录
 router.post("/users",(req,res)=>{

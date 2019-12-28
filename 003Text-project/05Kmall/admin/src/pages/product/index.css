@@ -7,3 +7,6 @@
 .ProductList .btn{
 	height: 40px;
 }
+.ProductAdd  .simditor-body{
+	overflow: hidden;
+}

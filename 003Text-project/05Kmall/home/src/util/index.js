@@ -33,6 +33,9 @@ module.exports={
 	goLogin:function(){
 		window.location.href = '/user-login.html?redirect='+encodeURIComponent(window.location.href)
 	},
+	goResult:function(type){
+		window.location.href = '/result.html?type='+type
+	},
 	getParamsFormUrl:function(key){
 		var query = window.location.search.substr(1)
 		var reg = new RegExp('(^|&)'+key+'='+'([^&]*)($|&)')
@@ -43,5 +46,8 @@ module.exports={
 		var template = Hogan.compile(tpl);
 		var html = template.render(data)
 		return html
+	},
+	showConfirm:function(msg){
+		return window.confirm(msg)
 	}
 }

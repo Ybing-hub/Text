@@ -20,20 +20,56 @@ var page = {
 	},
 	bindEvent:function(){
 		var _this = this
+		this.shippingBox.on('get-shippings',function(ev,shippings){
+			_this.renderShippings(shippings)
+		})
 		//1点击新增地址
-		this.shippingBox.on('click','shipping-add',function(){
+		this.shippingBox.on('click','.shipping-add',function(){
 			_modal.show()
 		})
+		//2.点击删除地址
+		this.shippingBox.on('click','.shipping-delete',function(ev){
+			ev.stopPropagation()
+			if (_util.showConfirm('你确定删除该地址吗?')) {
+				var shippingId = $(this).parents('.shipping-item').data('shipping-id')
+				api.deleteShippings({
+					data:{
+						id:shippingId
+					},
+					success:function(shippings){
+						_this.renderShippings(shippings)
+					},
+					error:function(){
+						_util.showErrorMsg('删除失败')
+					}
+				})
+			}
+		})
+	},
+	renderShippings:function(shippings){
+		var html = _util.render(shippingTpl,{
+			shippings:shippings
+		})
+		this.shippingBox.html(html)
 	},
 	loadShippingList:function(){
-		var html = _util.render(shippingTpl)
-		this.shippingBox.html(html)
+		var _this = this;
+		api.getShippings({
+			success:function(shippings){
+				/*
+				var html = _util.render(shippingTpl,{
+					shippings:shippings
+				})
+				_this.shippingBox.html(html)
+				*/
+				_this.renderShippings(shippings)
+			}
+		})
 	},
 	loadProductList:function(){
 		var _this = this;
 		api.getOrdersList({
 			success:function(data){
-				console.log(data)
 				if (data.cartList.length > 0) {
 					var html = _util.render(productTpl,data)
 					_this.productBox.html(html)

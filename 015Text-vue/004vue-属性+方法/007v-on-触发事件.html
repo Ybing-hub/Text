@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<p v-on:click="{count++}"><button>点击了{{count}}次</button></p>
+		<p @click="{count++}"><button>点击了{{count}}次</button></p>
+		<p @click="sayHi"><button>按钮</button></p>
+		<p @click="sayHi('jane')"><button>按钮</button></p>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			count:0
+		},
+		methods:{
+			sayHi:function(name){
+				console.log(name+'点击勒沃')
+			}
+		}
+	})
+</script>
+</html>

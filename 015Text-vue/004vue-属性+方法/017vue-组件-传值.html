@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<my-component task="吃饭"></my-component>
+		<my-component task="睡觉"></my-component>
+		<my-component task="装xx"></my-component>
+	</div>
+	<template id="btn1">
+		<p>{{task}}</p>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var todoList = Vue.extend({
+		data(){
+			return{
+				count:0
+			}
+		},
+		template:'#btn1',
+		props:{
+			task:String
+		}
+	})
+	//注册
+	Vue.component('my-component',todoList)
+
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			
+		}
+	})
+</script>
+</html>

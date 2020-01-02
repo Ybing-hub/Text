@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<input type="" name="" v-model="fullName">
+		<p>firstApp--{{firstApp}}</p>
+		<p>lastApp--{{lastApp}}</p>
+		<p>fullApp--{{fullName}}</p>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			firstApp:'apple',
+			lastApp:'11plus'
+		},
+		methods:{
+
+		},
+		computed:{
+			fullName:{
+				get(){
+					return this.firstApp +" "+this.lastApp
+				},
+				set(newValue){
+					var arr = newValue.split(' ')
+					this.firstApp = arr[0]
+					this.lastApp = arr[arr.length-1]
+
+				}
+			}	
+		},
+		watch:{
+			fullName:function(){
+				console.log('watch+++++++++')
+			}
+		}
+	})
+	vm.$watch('fullName',function(){
+		console.log('watch---------')
+	})
+</script>
+</html>

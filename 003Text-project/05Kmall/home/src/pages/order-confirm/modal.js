@@ -34,6 +34,10 @@ module.exports = {
 		var provinceSelectOption = this.getSelectOption(provinces)
 		var provinceSelect = this.$modalBox.find('.province-select')
 		provinceSelect.html(provinceSelectOption)
+		if (this.shipping) {
+			provinceSelect.val(this.shipping.province)
+			this.loadCities(this.shipping.province)
+		}
 	},
 	loadCities:function(province){
 		//加载城市
@@ -41,6 +45,9 @@ module.exports = {
 		var citiesSelectOption = this.getSelectOption(cities)
 		var citiesSelect = this.$modalBox.find('.city-select')
 		citiesSelect.html(citiesSelectOption)
+		if (this.shipping) {
+			citiesSelect.val(this.shipping.city)
+		}
 	},
 	getSelectOption:function(arr){
 		var html = '<option value="">请选择</option>'
@@ -98,7 +105,14 @@ module.exports = {
 		//3发送请求
 		if (fromDataValiDate.status) {
 			fromErr.hide()
-			api.addShippings({
+			var request = api.addShippings
+			var action = '新增'
+			if (_this.shipping) {
+				request = api.updateShippingsDetail
+				fromData.id = _this.shipping._id
+				action = '编辑'
+			}
+			request({
 				data:fromData,
 				success:function(shippings){
 					//1.新增成功关闭弹窗
@@ -106,7 +120,7 @@ module.exports = {
 					//2.自定义事件将数据传递出去
 					$('.shipping-box').trigger('get-shippings',[shippings])
 					//3.成功提示
-					_util.showSuccessMsg('新增地址成功')
+					_util.showSuccessMsg(action+'地址成功')
 				},
 				error:function(msg){
 					_util.showErrorMsg('新增地址失败')

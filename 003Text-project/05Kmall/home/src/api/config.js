@@ -26,6 +26,10 @@ var API_CONFIG = {
 	addShippings:   		['/shippings','post'],
 	getShippings:   		['/shippings/list','get'],
 	deleteShippings:   		['/shippings','delete'],
+	getShippingsDetail:   	['/shippings/detail','get'],
+	updateShippingsDetail:  ['/shippings','put'],
+
+	addOrders:  			['/orders','post'],
 }
 
 module.exports = {

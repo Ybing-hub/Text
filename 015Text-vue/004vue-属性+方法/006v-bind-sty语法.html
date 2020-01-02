@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<p style="background-color:cyan;color: red ">vue国人的js</p>
+		<p :style="{backgroundColor:'blue',color:'red'}">vue国人的js</p>
+		<p :style="{backgroundColor:bg,color:cl}">vue国人的js</p><br/>
+		<p :style="[{active:isActive},{error:isError}]">vue国人的js</p><br/>
+		<p :style="">:style="{objstyle}"</p><br/>
+		<p :style="arrStyle">:style="arrStyle"</p><br/>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			bg:'blue',
+			cl:'red'
+			objStyle:{
+				backgroundColor:'cyan',
+				color:'red'
+			},
+			arrStyle:[
+				{backgroundColor:'cyan'},
+				{color:'red'},
+			]
+		}
+	})
+</script>
+</html>

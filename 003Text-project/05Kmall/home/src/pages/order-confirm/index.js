@@ -45,8 +45,60 @@ var page = {
 				})
 			}
 		})
+		//3.点击编辑地址
+		this.shippingBox.on('click','.shipping-edit',function(ev){
+			ev.stopPropagation()
+			var $this = $(this)
+			var shippingId = $(this).parents('.shipping-item').data('shipping-id')
+			api.getShippingsDetail({
+				data:{
+					id:shippingId
+				},
+				success:function(shipping){
+					_modal.show(shipping)
+				},
+				error:function(){
+					_util.showErrorMsg(Msg)
+				}
+			})
+		})
+		//4.点击选中地址
+		this.shippingBox.on('click','.shipping-item',function(ev){
+			ev.stopPropagation()
+			var $this = $(this)
+			$this.addClass('active')
+			.siblings('.shipping-item')
+			.removeClass('active')
+
+			_this.selectShippingId = $this.data('shipping-id')
+		})
+		//5.点击支付
+		this.productBox.on('click','.btn-submit',function(){
+			var $this = $(this)
+			if (_this.selectShippingId) {
+				api.addOrders({
+					data:{
+						shippingId:_this.selectShippingId
+					},
+					success:function(){
+						window.location.href = './payment.html?orderNo'//+order.orderNo
+					},
+					error:function(){
+						_util.showErrMsg('创建订单失败,请稍后再试')
+					}
+				})
+			}else{
+				_util.showErrorMsg('你还没有选择地址')
+			}
+		})
 	},
 	renderShippings:function(shippings){
+		var _this = this
+		shippings.forEach(function(shipping){
+			if (shipping._id == _this.selectShippingId) {
+				shipping.active = true
+			}
+		})
 		var html = _util.render(shippingTpl,{
 			shippings:shippings
 		})

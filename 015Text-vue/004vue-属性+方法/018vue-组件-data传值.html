@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<!-- <todoItem task="吃饭"></todoItem> -->
+		<todoItem 
+			v-for="(item,index) in items"
+			:task="item.task"
+			:key="index"
+			:index="item.id"
+		>
+			
+		</todoItem>
+	</div>
+	<template id="btn1">
+		<p>{{task}}</p>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var todoList = Vue.extend({
+		data(){
+			return{
+				count:0
+			}
+		},
+		template:'#btn1',
+		props:{
+			task:String
+		}
+	})
+	//注册
+	Vue.component('todoItem',todoList)
+
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			items:[
+				{
+					id:0,
+					task:"吃饭"
+				},
+				{
+					id:1,
+					task:"睡觉"
+				},
+				{
+					id:2,
+					task:"装XX"
+				}
+			]
+		}
+	})
+</script>
+</html>

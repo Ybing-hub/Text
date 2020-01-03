@@ -11,7 +11,6 @@ var _util =require('util')
 		render:function(options){
 			//生成页数
 			var pages = Math.ceil(options.total / options.pageSize)
-			console.log(pages)
 			//生成数据
 			var pageArray = []
 			//计算上一页和下一页 

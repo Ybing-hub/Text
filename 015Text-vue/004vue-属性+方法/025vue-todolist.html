@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#app{
+			width: 960px;
+			margin: auto;
+		}
+		input{
+			margin: 100px 0;
+			width: 60%;
+			height: 34px;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		button{
+			width: 20%;
+			height: 34px;
+			box-sizing: border-box;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="" name=""><button>新😡增</button>
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+	<template id="todolist">
+		<div>home</div>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var Todolist = Vue.extend({
+		template:'#todolist'
+	})
+	//注册
+	Vue.component('todolist',Todolist)
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			items:["吃饭","睡觉","装XX"]
+		}
+	})
+</script>
+</html>

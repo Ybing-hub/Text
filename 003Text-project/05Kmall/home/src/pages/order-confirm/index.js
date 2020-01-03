@@ -80,8 +80,8 @@ var page = {
 					data:{
 						shippingId:_this.selectShippingId
 					},
-					success:function(){
-						window.location.href = './payment.html?orderNo'//+order.orderNo
+					success:function(order){
+						window.location.href = './payment.html?orderNo='+order.orderNo
 					},
 					error:function(){
 						_util.showErrMsg('创建订单失败,请稍后再试')

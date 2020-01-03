@@ -55,7 +55,6 @@ var page = {
 		api.getProductsList({
 			data:_this.productsListParams,
 			success:function(data){
-				console.log(data)
 				if(data.list.length > 0){
 					var html = _util.render(tpl,{
 						list:data.list

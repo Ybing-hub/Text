@@ -23,6 +23,7 @@ var page = {
 			api.getPayments({
 				data:_this.paymentsParams.orderNo,
 				success:function(order){
+					console.log(order)
 					var html = _util.render(tpl,order)
 					_this.paymentBox.html(html)
 				},

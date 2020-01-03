@@ -6,21 +6,26 @@
 </head>
 <body>
 	<div id="app">
-		<todo-item>
+		<todo-item
+			v-for="(item,index) in items"
+			:key="index"
+			:task="item.task"
+			:dateline="item.dateline"
+		>
 			
 		</todo-item>
 	</div>
 	<template id="todo-item">
 		<div>
-			<task></task>
-			<dateline></dateline>
+			<task :task="task"></task>
+			<dateline :dateline="dateline"></dateline>
 		</div>
 	</template>
 	<template id="task">
-		<div>{{tag}}：完成每日</div>
+		<div>{{tag}}:-->>{{task}}</div>
 	</template>
 	<template id="dateline">
-		<div>{{tag}}：清晨6点前</div>
+		<div>{{tag}}:-->>{{dateline}}</div>
 	</template>
 </body>
 <script type="text/javascript" src="js/vue.min.js"></script>
@@ -32,7 +37,10 @@
 				tag:"任务"
 			}
 		},
-		template:'#task'
+		template:'#task',
+		props:{
+			task:String
+		}
 	})
 	var Dateline = Vue.extend({
 		data(){
@@ -40,7 +48,10 @@
 				tag:"截止时间"
 			}
 		},
-		template:'#dateline'
+		template:'#dateline',
+		props:{
+			dateline:String
+		}
 	})
 	var Todulist = Vue.extend({
 		data(){
@@ -52,6 +63,10 @@
 		components:{
 			task:Task,
 			dateline:Dateline
+		},
+		props:{
+			task:String,
+			dateline:String
 		}
 	})
 	//注册
@@ -59,7 +74,16 @@
 	var vm = new Vue({
 		el:'#app',
 		data:{
-
+			items:[
+				{
+					task:"击杀伊西斯",
+					dateline:"周六更新前"
+				},
+				{
+					task:"完成主线任务",
+					dateline:"清晨6点前"
+				}
+			]
 		}
 	})
 </script>

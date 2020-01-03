@@ -30,6 +30,7 @@ var API_CONFIG = {
 	updateShippingsDetail:  ['/shippings','put'],
 
 	addOrders:  			['/orders','post'],
+	getPayments:  			['/payments','get'],
 }
 
 module.exports = {

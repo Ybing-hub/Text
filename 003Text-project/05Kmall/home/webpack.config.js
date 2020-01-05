@@ -31,6 +31,8 @@ module.exports = {
 		'cart':'./src/pages/cart',
 		'order-confirm':'./src/pages/order-confirm',
 		'payment':'./src/pages/payment',
+		'order-list':'./src/pages/order-list',
+		'order-detail':'./src/pages/order-detail',
 	},
 	//输出
 	output: {// webpack 如何输出结果的相关选项
@@ -112,6 +114,8 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 	    new htmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
 	    new htmlWebpackPlugin(getHtmlConfig('payment','支付中...')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
 	    //自动清理多余文件
 	    new CleanWebpackPlugin(),
 	    //单独打包CSS文件

@@ -31,6 +31,10 @@ var API_CONFIG = {
 
 	addOrders:  			['/orders','post'],
 	getPayments:  			['/payments','get'],
+	getPaymentStatus:  		['/payments/status','get'],
+
+	getOrdersList:  		['/orders/list','get'],
+	getOrderDetail:  		['/orders/detail','get'],
 }
 
 module.exports = {

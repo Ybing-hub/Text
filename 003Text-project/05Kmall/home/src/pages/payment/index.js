@@ -12,6 +12,7 @@ var page = {
 		orderNo:_util.getParamsFormUrl('orderNo')
 	},
 	init:function(){
+		this.timer = 0
 		this.paymentBox = $('.payment-box')
 		this.loadPayments()
 	},
@@ -21,11 +22,13 @@ var page = {
 		var _this = this;
 		if (this.paymentsParams.orderNo) {
 			api.getPayments({
-				data:_this.paymentsParams.orderNo,
+				data:{
+					orderNo:_this.paymentsParams.orderNo
+				},
 				success:function(order){
-					console.log(order)
 					var html = _util.render(tpl,order)
 					_this.paymentBox.html(html)
+					_this.listenPaymentStatus()
 				},
 				error:function(){
 					_this.paymentBox.html('<p class="empty-message">获取订单失败,请重试</p>')
@@ -35,6 +38,24 @@ var page = {
 			_this.paymentBox.html('<p class="empty-message">你还没有订单,稍后再试</p>')
 		}
 		
+	},
+	listenPaymentStatus:function(){
+		var _this = this
+		this.timer = setInterval(function(){
+			api.getPaymentStatus({
+				data:{
+					orderNo:_this.paymentsParams.orderNo
+				},
+				success:function(status){
+					if (status) {
+						window.location.href = './result.html?type=payment&orderNo='+_this.paymentsParams.orderNo
+					}
+				},
+				error:function(){
+
+				}
+			})
+		},1000)  
 	}
 }
 $(function(){

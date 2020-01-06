@@ -20,18 +20,7 @@ export default {
     data() {
         return {
             todos: [
-                {
-                task: 'LOL',
-                    done: false
-                },
-                {
-                    task: 'DNF',
-                    done: true
-                },
-                {
-                    task: 'CF',
-                    done: true
-                },
+                
             ]
         }
     },

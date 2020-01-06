@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { DEL_TODO } from '../store/types.js'
 export default {
     name: 'Item',
     data() {
@@ -27,9 +28,9 @@ export default {
             this.bgColor = flag ? '#ccc' : '#fff';
             this.isShow = flag
         },
-        handleDel:function() {
+        handleDel:function(index) {
             if (window.confirm('你确定要删除?')) {
-                this.delTodo(this.index)
+                this.$store.dispatch(DEL_TODO,index)
             }
         }
     },

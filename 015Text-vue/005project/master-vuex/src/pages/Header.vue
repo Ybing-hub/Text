@@ -1,11 +1,12 @@
 <template>
     <div id="Header">
         <h1>TodoList</h1>
-        <input type="text" placeholder="请输入任务" v-model="task" @keyup.enter="handleAdd()">
+        <input type="text" placeholder="请输入游戏" v-model="task" @keyup.enter="handleAdd()">
     </div>
     </template>
 
 <script>
+import { ADD_TODO } from '../store/types.js'
 export default {
     name: 'Header',
     data() {
@@ -21,7 +22,7 @@ export default {
             //1效验数据
             var task = this.task.trim()
             if (!task) {
-                alert("请输入你的任务")
+                alert("请输入你常玩的游戏")
                 return
             }
             //2封装任务对象
@@ -30,7 +31,8 @@ export default {
                 done: false
             }
             //3将对象添加到对象数组中
-            this.addTodo(todo)
+            // this.addTodo(todo)
+            this.$store.dispatch(ADD_TODO,todo)
             //4将输入框清空
             this.task = ''
         }

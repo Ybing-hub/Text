@@ -2,7 +2,7 @@
   <div id="App">
     <Header :addTodo="addTodo"/>
     <Content :todos="todos" :delTodo="delTodo"/>
-    <Footer :todos="todos"/>
+    <Footer :todos="todos" :selectAllDone="selectAllDone" :deleteSelectDone="deleteSelectDone"/>
   </div>
 </template>
 
@@ -40,7 +40,15 @@ export default {
             this.todos.unshift(todo)
         },
         delTodo:function(index){
-          this.todos.splice(index,1)
+            this.todos.splice(index,1)
+        },
+        selectAllDone:function(value){
+            this.todos.forEach((item)=>{
+                item.done = value
+            })
+        },
+        deleteSelectDone:function(){
+            this.todos = this.todos.filter((item)=>item.done != true)
         }
     }
 }

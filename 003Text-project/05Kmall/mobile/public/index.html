@@ -14,4 +14,17 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+<script>
+(function(win, doc) {
+    var oRoot = doc.getElementsByTagName('html')[0];
+
+    function calcFs() {
+        var clientWidth = doc.documentElement.clientWidth || doc.body.clientWidth;
+        var fontSize = clientWidth / 10;
+        oRoot.style.fontSize = fontSize + 'px';
+    }
+    win.addEventListener('resize', calcFs, false);
+    doc.addEventListener('DOMContentLoaded', calcFs, false);
+})(window, document);
+</script>
 </html>

@@ -1,8 +1,8 @@
 <template>
   <div id="Footer">
-    <input type="checkbox" name="">
-    <span>1/{{total}}</span>
-    <button>删除选中</button>
+    <input type="checkbox" name="" v-model="allDone">
+    <span>{{totalDone}}/{{total}}</span>
+    <button @click="handleDelSelectDone">删除选中</button>
   </div>
 </template>
 
@@ -12,10 +12,35 @@ export default {
     computed: {
         total: function() {
             return this.todos.length
+        },
+        totalDone:function(){
+            return this.todos.reduce((total,item)=>{
+                if (item.done) {
+                    total = total+1
+                }
+                return total
+            },0)
+        },
+        allDone:{
+            get(){
+                return this.total == this.totalDone && (this.total != 0)
+            },
+            set(value){
+                this.selectAllDone(value)
+            }
         }
     },
     props: {
-        todos: Array
+        todos: Array,
+        selectAllDone:Function,
+        deleteSelectDone:Function
+    },
+    methods:{
+        handleDelSelectDone:function(){
+            if (window.confirm('你确定删除选中?')) {
+                this.deleteSelectDone()
+            }
+        }
     }
 }
 </script>

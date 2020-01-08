@@ -13,7 +13,7 @@
 </template>
 <script>
 import Swiper from 'swiper';
-import 'swiper/dist/css/swiper.min.css';
+import 'swiper/css/swiper.min.css';
 export default{
 	name:'home',
 	mounted(){

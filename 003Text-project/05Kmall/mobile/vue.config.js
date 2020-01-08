@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
 	//配置服务
 	devServer: {
-	port: 3001,
+	port: 3003,
 	proxy: 'http://localhost:3000'
 	},
 	pluginOptions: {

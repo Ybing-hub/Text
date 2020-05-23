@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			height: 400px;
+			background-color: skyblue;
+			margin: 100px auto;
+			position: relative;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: purple;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: cyan;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+	</div>
+	<a href="https://www.baidu.com"><span>百度一下</span></a>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.box').on('click',function(){
+			alert('000')
+		})
+		$('.box1').on('click',function(event){
+			// event.stopPropagation()
+			alert('111')
+		})
+		$('.box2').on('click',function(event){
+			event.stopPropagation()
+			alert('222')
+		})
+		$('a').on('click',function(){
+			alert('aclick')
+		})
+		// $('.box2').trigger('click')
+		// $('.box').trigger('click');
+		$('span').trigger('click')
+		// $('body').trigger('click')
+		// $('a').triggerHandler('click')
+		// $('.box2').triggerHandler('click')
+	});
+</script>
+</html>

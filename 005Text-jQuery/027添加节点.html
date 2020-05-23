@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>添加到后</p>
+	<p>添加到前</p>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').eq(0).on('click',function(){
+			var oLi = $('<li>新来的+1</li>')
+			// $('ul').append(oLi)
+			// oLi.appendTo($('ul'))
+			$('body').append('<></>')
+		})
+		$('p').eq(1).on('click',function(){
+			var oLi = $('<li>新来的+1</li>')
+			// $('ul').append(oLi)
+			// $('ul').prepend(oLi)
+			oLi.prependTo($('ul'))
+		})
+	});
+</script>
+</html>

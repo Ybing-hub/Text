@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	async function fn(){
+		return 'xx2'
+	}
+	// console.log(fn())
+	const promise = fn()
+	console.log(promise)
+	promise.then(data=>{
+		console.log(data)
+	})
+</script>
+</html>

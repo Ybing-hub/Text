@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024单页平滑过渡.html</title>
+	<link rel="stylesheet" href="Css/all.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page>input,a{
+			width: 20%;
+			height: 34px;
+			position: fixed;
+			line-height: 34px;
+			top: 0;
+			text-align: center;
+			text-decoration:none;
+			background-color: rgb(0,0,0,0.7);
+		}
+		.page>input{
+			z-index: 9;
+			opacity: 0;
+		}
+		input:checked+a{
+			color: red;
+			background-color: rgb(0,0,0,1);
+		}
+		#xx1,#xx1+a{
+			left: 0;
+		}
+		#xx2,#xx2+a{
+			left: 20%;
+		}
+		#xx3,#xx3+a{
+			left: 40%;
+		}
+		#xx4,#xx4+a{
+			left: 60%;
+		}
+		#xx5,#xx5+a{
+			left: 80%;
+		}
+		.content{
+			height: 100%;
+			transition: all 1s;
+		}
+		.pages{
+			height: 100%;
+			padding-top: 34px;
+			box-sizing: border-box;
+		}
+		.page{
+			height: 100%;
+			overflow: hidden;
+		}
+		html,body{
+			height:100%;
+		}
+		a{
+			z-index: 3;
+		}
+		.content .pages{
+			width: 100%；
+			height:100%;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+        
+		#xx1:checked~.content{
+			transform: translateY(0%);
+		}
+		#xx2:checked~.content{
+			transform: translateY(-100%);
+		}
+		#xx3:checked~.content{
+			transform: translateY(-200%);
+		}
+		#xx4:checked~.content{
+			transform: translateY(-300%);
+		}
+		#xx5:checked~.content{
+			transform: translateY(-400%);
+		}
+		.page1{
+			background-image: url(image/home.png);
+		}
+		.page2{
+			background-image: url(image/service.png);
+		}
+		.page3{
+			background-image: url(image/about.png);
+		}
+		.page4{
+			background-image: url(image/team.png);
+		}
+		.page5{
+			background-image: url(image/contact.png);
+		}
+		#xx1:checked~.content .page1{
+			animation:sport 2s;
+		}
+		@keyframes sport{
+			from{
+				opacity: 0.5;
+			}
+			to{
+				opacity: 1;
+			} 
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="nav" id="xx1" checked><a href="javasprict"><i class="fas fa-home"></i>Home</a>
+		<input type="radio" name="nav" id="xx2"><a href="javasprict"><i class="fas fa-coffee"></i>Service</a>
+		<input type="radio" name="nav" id="xx3"><a href="javasprict"><i class="fas fa-building"></i>About</a>
+		<input type="radio" name="nav" id="xx4"><a href="javasprict"><i class="fas fa-users"></i>Team</a>
+		<input type="radio" name="nav" id="xx5"><a href="javasprict"><i class="fas fa-phone"></i>Contact</a>
+	    <div class="content">
+			<div class="page1 pages"></div>
+			<div class="page2 pages"></div>
+			<div class="page3 pages"></div>
+			<div class="page4 pages"></div>
+			<div class="page5 pages"></div>
+	    </div>
+	</div>
+</body>
+</html>

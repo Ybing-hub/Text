@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="root">
+		<h1>欢迎</h1>
+		<p>2019-12-04 15:00:00</p>
+	</div>
+</body>
+<script type="text/javascript">
+	var oDiv = document.getElementById('root')
+	function tisk(){
+		oDiv.innerHTML = `<h1>欢迎</h1><p>${new Date().toLocaleString()}</p>`
+	}
+	setInterval(tisk,1000)
+</script>
+</html>

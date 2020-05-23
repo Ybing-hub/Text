@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<todo-item
+			v-for="(item,index) in items"
+			:task="item.task"
+			:key="index"
+			:index="item.id"
+		>
+			
+		</todo-item>
+	</div>
+	<template id="tem">
+		<p>{{index}}--{{task}}</p>
+	</template>
+</body>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var Todulist = Vue.extend({
+		data(){
+			return{
+
+			}
+		},
+		template:'#tem',
+		props:{
+			task:String,
+			index:Number
+		}
+	})
+	//注册
+	Vue.component('todo-item',Todulist)
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			items:[
+				{
+					id:0,
+					task:"吃饭"
+				},
+				{
+					id:1,
+					task:"睡觉"
+				},
+				{
+					id:2,
+					task:"装Xx"
+				}
+			]
+		}
+	})
+</script>
+</html>

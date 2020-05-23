@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	var obj = {
+		username:'tom',
+		age:18
+	}
+	*/
+	
+	const username = 'kangkang'
+	const age = 18
+	/*
+	var obj = {
+		username:username,
+		age:age
+	}
+	
+	const obj = {
+		username:'jane',
+		age:18,
+		sayHi:function(){
+			// console.log(this)
+			console.log('hi...')
+		}
+	}
+	*/
+	
+	const obj = {
+		username,
+		age,
+		sayHi:function(){
+			console.log('hi...')
+		}
+	}
+	
+	console.log(obj)
+	obj.sayHi();
+</script>
+</html>

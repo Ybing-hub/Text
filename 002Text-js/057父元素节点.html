@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 300px;
+			height: 300px;
+			margin: 100px auto;
+			border: 1px solid #000;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box1">
+			
+		</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1')
+	var oBox=oBox1.parentNode;
+	// var oBox=oBox1.offsetParent
+	oBox.style.backgroundColor='blue';
+</script>
+</html>

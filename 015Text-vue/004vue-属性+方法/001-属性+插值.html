@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<p ref="p1">{{message}}😢</p>
+		<p v-text="message"></p>
+		<p v-once>{{message}}😢</p>
+		<p v-html="rawhtml">😢</p>
+		<input v-model="message" type="text" name="">
+		<input v-model.lazy="message" type="text" name="">
+		<input v-model.number="message" type="text" name="">
+		<input v-model.trim="message" type="text" name="">
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			message:'hiVue',
+			rawhtml:'<h1>hello😢</h1>'
+		}
+	})
+	/*
+	console.log(vm)
+	console.log(vm.$el)
+	console.log(vm.$data.message)
+	console.log(vm.$refs.p1)
+	vm.$watch('change',function(){
+		console.log('sssssssss')
+	})
+	*/	
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(){
+		console.log(this)
+		this.name = 'dijia';
+		this.age = 20;
+		return {name:"1",age:"11"}
+	}
+	show();
+	new show();
+</script>
+</html>

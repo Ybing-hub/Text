@@ -1,0 +1,31 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	float: left;
+	width: 4.6875rem;
+}
+p{
+	font-size: 0.75rem;
+}
+@fs:37.5;
+.rem(@attr,@val){
+	@{attr}:unit(@val / @fs,rem);
+}
+.rem(@attr,@val,@val2){
+	@{attr}:unit(@val / @fs,rem) unit(@val2 / @fs,rem);
+}
+.rem(@attr,@val,@val2,@val3){
+	@{attr}:unit(@val / @fs,rem) unit(@val2 / @fs,rem) unit(@val3 / @fs,rem);
+}
+img{
+	float: left;
+	.rem(width,150);
+	// .rem(margin,10);
+	// .rem(margin,10,20);
+	.rem(margin,10,30,30);
+}
+p{
+	.rem(font-size,24)
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	const p1 = Promise.resolve('ok p1')
+	const p2 = Promise.resolve('ok p2')
+	const p3 = Promise.resolve('ok p3')
+	const p4 = Promise.reject('err p4')
+
+	const p = Promise.all([p1,p2,p3,p4])
+	p.then(data =>{
+		console.log(data)
+		console.log(p)
+	})
+	.catch(err =>{
+		console.log(err)
+		console.log(p)
+	})
+	*/
+	
+	function getImgPromise(url){
+		return new Promise((resolve,reject) =>{
+			var img = new Image()
+
+			img.onload = function(){
+				resolve('load success'+url)
+			}
+
+			img.onerror = function(){
+				reject('load file'+url)
+			}
+			img.src = url;
+		})
+	}
+	const imgs = ['../01Text-css/image/fengjing1.jpg','../01Text-css/image/fengjing2.jpg'].map((scr) =>{
+		return getImgPromise(scr)
+	})
+	console.log(imgs)
+	const p = Promise.all(imgs)
+	p.then(data =>{
+		// console.log(data)
+		console.log(p)
+	}).catch(err =>{
+		console.log(err)
+	})
+</script>
+</html>

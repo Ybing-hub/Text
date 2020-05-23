@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<h1>TodoList</h1>
+		<input type="text" name="" class="todo-input">
+		<ul class="todo-list">
+			{% for item in data %}
+			<li class="todo-item" data-id="{{item.id}}">{{ item.things }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>

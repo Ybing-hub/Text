@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002let的for循环.html</title>
+	<link rel="stylesheet" type="text/css" href="../08Text-bootstrop/bootstrap-3.3.7/dist/css/bootstrap.css">
+</head>
+<body>
+	<button type="button" class="btn btn-default">（默认样式）Default</button>
+	<button type="button" class="btn btn-primary">（首选项）Primary</button>
+	<button type="button" class="btn btn-success">（成功）Success</button>
+	<button type="button" class="btn btn-info">（一般信息）Info</button>
+	<button type="button" class="btn btn-warning">（警告）Warning</button>
+	<button type="button" class="btn btn-danger">（危险）Danger</button>
+	<button type="button" class="btn btn-link">（链接）Link</button>
+</body>
+<script type="text/javascript" src="../08Text-bootstrop/js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../08Text-bootstrop/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+	var aButs = document.getElementsByTagName('button')
+	console.log(aButs)
+	for(let i = 0;i<aButs.length;i++){
+		;(function(i){
+			aButs[i].onclick = function(){
+				console.log(i)
+			}
+		})(i);
+	}
+</script>
+</html>

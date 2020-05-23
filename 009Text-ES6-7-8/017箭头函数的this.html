@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	var id = 22;
+	function Show(id){
+		this.id = id
+		console.log(this);
+		console.log(this.id);
+		setTimeout(function(){
+			console.log(this)
+			console.log(this.id)
+		},1000)
+	}
+	const s = new Show(11)
+	*/
+	// Show(11)
+	
+	var id = 22;
+	function Timer(id){
+		this.id = id
+		console.log(this);
+		console.log(this.id);
+		setTimeout(()=>{
+			console.log(this)
+			console.log(this.id)
+		},1000)
+	}
+
+	const s = new Timer(11)
+	// Timer(11)
+	
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 600px;
+			height: 400px;
+			margin: 100px auto;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<p>淡入</p>
+	<p>淡出</p>
+	<p>切换</p>
+	<p>你想要多少</p>
+	<div><img src="../Text-css/image/fengjing1.jpg" alt=""></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').eq(0).on('click',function(){
+			$('div').fadeIn(1000)
+		})
+		$('p').eq(1).on('click',function(){
+			$('div').fadeOut(1000)
+		})
+		$('p').eq(2).on('click',function(){
+			$('div').fadeToggle(1000)
+		})
+		$('p').eq(3).on('click',function(){
+			$('div').fadeTo(1000,0.5)
+		})
+	});
+</script>
+</html>

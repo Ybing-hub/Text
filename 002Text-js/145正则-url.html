@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="扫描">
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		//https://www.baidui.com
+		//http://www.4399.com
+		//https://www.tengxun.com
+		var val = oTxt.value;
+		var reg = /^\w{4,5}:\/\/w{3}\.\w[0-9a-z_]\.\w{2,5}$/;
+		if (reg.test(val)) {
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}
+</script>
+</body>
+</html>

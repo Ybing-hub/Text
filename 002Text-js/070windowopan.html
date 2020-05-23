@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea  id="txt" cols="30" rows="10"></textarea>
+	<button id="btn">打开</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	oBtn.onclick = function(){
+		// alert('aaa')
+		var val = oTxt.value;
+		var winop = window.open();
+		winop.document.write(val);
+		console.log(winop);
+	}
+</script>
+</html>

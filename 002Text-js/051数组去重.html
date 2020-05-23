@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [5,6,2,2,7,6,9,4,7,1,];
+	var arr1 = [];
+	for(var i=0;i<arr.length;i++){
+		var isDup = false;
+		console.log(arr[i])
+		for(var j=0;j<arr1.length;j++){
+			console.log(arr1[j])
+			if (arr[i] == arr1[j]) {
+				isDup = true;
+				break;
+			}
+		}
+		if(!isDup){
+			arr1.push(arr[i]);
+		}
+		console.log(arr1);
+	}
+</script>
+</html>

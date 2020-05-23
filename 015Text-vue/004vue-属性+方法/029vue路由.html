@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029vue路由</title>
+</head>
+<body>
+	<div id="app">
+		<div>
+			<router-link to="/home">Go to Home</router-link>
+	    	<router-link to="/list">Go to List</router-link>
+	    	<router-link :to="{name:'category',params:{id:456}}">Go to Category</router-link>
+		</div>
+		<router-view></router-view>
+	</div>
+	<template id="home">
+		<div>
+			home page
+		</div>
+	</template>
+	<template id="list">
+		<div>
+			<div>
+				<router-link to="/list/dec">Go to Dec</router-link>
+	    		<router-link to="/list/sport">Go to Sport</router-link>
+			</div>
+			<div>
+				<router-view></router-view>
+			</div>
+		</div>
+	</template>
+	<template id="dec">
+		<div>
+			dec page
+		</div>
+	</template>
+	<template id="sport">
+		<div>
+			sport page
+		</div>
+	</template>
+	<template id="category">
+		<div>
+			category page,id is{{$route.params.id}}
+		</div>
+	</template>
+</body>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/vue-router.js"></script>
+<script type="text/javascript">
+	// 1. 定义 (路由) 组件。
+	var Home = Vue.extend({
+		template:'#home'
+	})
+	var List = Vue.extend({
+		template:'#list'
+	})
+	var Dec = Vue.extend({
+		template:'#dec'
+	})
+	var Sport = Vue.extend({
+		template:'#sport'
+	})
+	var Category = Vue.extend({
+		template:'#category'
+	})
+	// 2. 定义路由
+	var routes = [
+	  { path: '/home', component: Home },
+	  { 
+	  	path: '/list', 
+	  	component: List,
+	  	children:[
+	  		{
+	  			path:'dec',
+	  			component:Dec
+	  		},
+	  		{
+	  			path:'sport',
+	  			component:Sport
+	  		}
+	  	]
+	  },
+	  { path: '/category/:id',name:'category',component: Category },
+	  { path: '/', redirect: 'dec' }
+	]
+	// 3. 创建 router 实例，然后传 `routes` 配置
+	var router = new VueRouter({
+	  routes// (缩写) 相当于 routes: routes
+	})
+	// 4. 创建和挂载根实例。
+	// var app = new Vue({
+	//   router
+	// }).$mount('#app')
+
+	var vm = new Vue({
+		el:'#app',
+		router,
+		data:{
+
+		}
+	})
+</script>
+</html>

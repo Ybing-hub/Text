@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 100px auto;
+			text-align: center;
+			line-height: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		hello
+		<br>
+		<a href="#">百度一下</a>
+	</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			alert('搜索呀')
+		})
+		// var x = $('div').remove();
+		// $('div').empty();
+		$('div').detach()
+
+		// console.log(x)
+	});
+</script>
+</html>

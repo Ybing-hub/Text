@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		p{
+			position: relative;
+			top: 50px;
+			left: 900px;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<p>开始动画</p>
+	<!-- <p>停止动画</p> -->
+	<div>1</div>
+	<div>2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').on('click',function(){
+			$('div').eq(0).animate({width:400},1000,'swing')
+		})
+		$('p').on('click',function(){
+			$('div').eq(1).animate({width:400},1000,'linear')
+		})
+	});
+</script>
+</html>

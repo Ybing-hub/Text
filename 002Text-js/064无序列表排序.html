@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>6</li>
+		<li>1</li>
+		<li>2</li>
+		<li>18</li>
+		<li>9</li>
+	</ul>
+	<input type="button" id="btn" value="排序">
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var oBtn = document.getElementById('btn');
+	var result = [];
+	var aLi  = oUl.children;
+	for(var i=0; i<aLi.length;i++){
+		result.push(aLi[i]);
+	}
+	oBtn.onclick = function(){
+		// alert('aaa')
+		result.sort(function(oLi1,oLi2){
+			return oLi1.innerHTML - oLi2.innerHTML;
+		})
+		for(var j = 0;j<result.length;j++){
+			oUl.appendChild(result[j]);
+		}
+	}
+</script>
+</html>

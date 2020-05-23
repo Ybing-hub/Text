@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015汇率计算.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+		function Local(name){
+			this.init(name)
+			this.oInput = null;
+			this.foreigns = [];
+			this.bindEvent();
+		}
+		Local.prototype = {
+			constructor:Local,
+			init:function(name){
+				var oP = document.createElement('p');
+				this.oInput = document.createElement('input');
+				oP.innerHTML = name + ' : ';
+				oP.appendChild(this.oInput);
+				document.body.appendChild(oP);
+			},
+			register:function(waibi){
+				this.foreigns.push(waibi);
+			},
+			fabu:function(val){
+				for(var i = 0;i < this.foreigns.length;i++){
+					this.foreigns[i].listen(val)
+				}
+			},
+			bindEvent:function(){
+				this.oInput.oninput = function(){
+					var sVal = this.oInput.value;
+					this.fabu(sVal);
+				}.bind(this);
+			}
+		}
+		w.Local = Local
+	})(window);
+
+	(function(w){
+		function Waibi(name,huilv,local){
+			this.huilv = huilv;
+			this.init(name);
+			this.oSpan = null;
+			local.register(this);
+		}
+		Waibi.prototype = {
+			constructor:Waibi,
+			init:function(name){
+				var oP = document.createElement('p');
+				this.oSpan = document.createElement('span');
+				oP.innerHTML = name + ' : ';
+				oP.appendChild(this.oSpan);
+				document.body.appendChild(oP);
+			},
+			listen:function(val){
+				this.oSpan.innerHTML = val / this.huilv
+			}
+		}
+		w.Waibi = Waibi
+	})(window);
+	var cny = new Local('人名币cny');
+	var usd = new Waibi('美元usd',7,cny);
+</script>
+</html>

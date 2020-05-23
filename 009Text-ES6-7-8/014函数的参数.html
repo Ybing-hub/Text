@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function show(name,age=18){
+		console.log(name,age)
+	}
+	show('tom')
+	name = 'jane'
+	show(name)
+	function show2(url,{method="GET",body="name=Tom"} = {}){
+        console.log(method,body);
+        // console.log(url,method,body)
+    }
+    show2();//GET name=Tom
+    show2('http://kuazhu.com');//GET name=Tom
+</script>
+</html>

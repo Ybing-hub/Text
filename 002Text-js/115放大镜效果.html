@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>168-放大镜效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#wrap{
+			position: relative;
+			top: 20px;
+			left: 20px;
+		}
+		#bImg{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #ccc;
+		}
+		#mask{
+			display: none;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			background:rgba(100,100,100,0.5);
+			cursor: move;
+		}
+		#sImgs{
+			position: absolute;
+			top: 472px;
+			left: 0px;
+			width: 450px;
+			height: 54px;
+		}
+		#sImgs li{
+			float: left;
+			margin-right: 50px;
+			width: 54px;
+			height: 54px;
+		}
+		#sImgs li.active{
+			border: 2px solid #f00;
+		}
+		#lImg{
+			display: none;
+			width: 600px;
+			height: 600px;
+			position: absolute;
+			top: 0px;
+			left: 452px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#lImg img{
+			position: absolute;
+			top:0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bImg">
+			<img src="images/p_b_0001.jpg" alt="">
+			<div id="mask"></div>
+		</div>
+		<ul id="sImgs">
+			<li class="active"><img src="images/p_s_0001.jpg" alt=""></li>
+			<li><img src="images/p_s_0002.jpg" alt=""></li>
+			<li><img src="images/p_s_0003.jpg" alt=""></li>
+		</ul>
+		<div id="lImg">
+			<img src="images/p_l_0001.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var oWrap = document.getElementById('wrap');
+	var aSImgsLi = document.getElementById('sImgs').children;
+	var oBImg = document.querySelector('#bImg img');
+	var oLImg = document.querySelector('#lImg img');
+	var oBDiv = document.getElementById('bImg');
+	var oLDiv = document.getElementById('lImg');
+	var oMask = document.getElementById('mask');
+	for(var i = 0;i<aSImgsLi.length;i++){
+		aSImgsLi[i].index = i ;
+		aSImgsLi[i].onmouseover = function(){
+			for(var j = 0;j<aSImgsLi.length;j++){
+				aSImgsLi[j].className = ''
+			}
+			this.className = 'active'
+			oBImg.src = "images/p_b_000"+(this.index+1)+".jpg";
+			oLImg.src = "images/p_l_000"+(this.index+1)+".jpg";
+		}
+	}
+	oBDiv.onmouseover = function(){
+		oMask.style.display = 'block';
+		oLDiv.style.display = 'block';
+		oBDiv.onmousemove = function(ev){
+			var l = ev.clientX - oMask.offsetWidth/2 - oWrap.offsetLeft;
+			var t =ev.clientY - oMask.offsetHeight/2 - oWrap.offsetTop;
+
+
+			if (t < 0) {
+				t = 0;
+			}else if (t > (oBDiv.offsetHeight - oMask.offsetHeight)){
+				t = oBDiv.offsetHeight - oMask.offsetHeight
+			}
+			if (l < 0) {
+				l = 0;
+			}else if (l > (oBDiv.offsetWidth - oMask.offsetWidth)) {
+				l = oBDiv.offsetWidth - oMask.offsetWidth
+			}
+			oMask.style.top = t + 'px';
+			oMask.style.left = l + 'px'
+
+			var scaleX = l /(oBDiv.offsetWidth - oMask.offsetWidth)
+			var scaleY = t /(oBDiv.offsetHeight - oMask.offsetHeight)
+			oLImg.style.left = (oLDiv.offsetWidth - oLImg.offsetWidth)*scaleX + 'px'
+			oLImg.style.top = (oLDiv.offsetHeight - oLImg.offsetHeight)*scaleY + 'px'
+		}
+
+	}
+	oBDiv.onmouseout = function(){
+		oMask.style.display = 'none';
+		oLDiv.style.display = 'none';
+	}
+</script>
+</html>

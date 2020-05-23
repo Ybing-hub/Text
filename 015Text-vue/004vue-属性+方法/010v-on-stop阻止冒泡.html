@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.largeBox{
+			margin: 50px auto;
+			width: 400px;
+			height: 400px;
+			border: 1px solid red;
+			background-color: red;
+		}
+		.bigBox{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			background-color: blue;
+			margin: 50px auto;
+		}
+		.smallBox{
+			margin: 50px auto;
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			background-color: green;
+		}
+		.small{
+			margin: 50px auto;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="largeBox" @click.capture="onLargeBox">
+			<div class="bigBox" @click="onBigBox">
+				<div class="smallBox" @click.once="onSmallBox">
+					<div class="small" @click.stop="onSmall()"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			count:0
+		},
+		methods:{
+			onLargeBox:function(){
+				console.log('large')
+			},
+			onBigBox:function(){
+				console.log('Big')
+			},
+			onSmallBox:function(){
+				console.log('smallBox')
+			},
+			onSmall:function(){
+				console.log('small')
+			},
+		}
+	})
+</script>
+</html>

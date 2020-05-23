@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			transition: width 2s;
+		}
+		.box1:hover{
+			width: 400px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+			animation:sport 1s linear 1s 4 normal;
+
+		}
+		.box2:hover{
+			animation-play-state: paused;
+		}
+		@keyframes  sport{
+			from {
+				width: 200px;
+			  }
+			to {  
+				width:600px;
+			}
+
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="box1">
+		
+	</div>
+	<div class="box2">
+		
+	</div>
+</body>
+</html>

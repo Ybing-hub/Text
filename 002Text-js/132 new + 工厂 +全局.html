@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function sayhi(){
+		console.log('hi...');
+	}
+	function sayFrom(){
+		console.log('I am from '+this.address)
+	}
+	function Student(name,age,address,major){
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.major = major;
+		this.sayhi = sayhi;
+		this.sayFrom = sayFrom
+	}
+	var stu1 = new Student("dijia",22,"许昌","数字媒体");
+	console.log(stu1);
+	stu1.sayhi();
+	stu1.sayFrom();
+	var stu2 = new Student("zhangsan",19,"禹州","土木工程");
+	console.log(stu2);
+	stu2.sayhi();
+	stu2.sayFrom();
+</script>
+</html>

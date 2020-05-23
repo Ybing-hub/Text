@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	function setCookie(key,val,iDate){
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate() + iDate);
+        document.cookie = key+"="+val+";expires="+oDate;
+    }
+    setCookie('name','tom',1)
+    setCookie('age','18',1)
+    setCookie('sex','male',1)
+    function getCookie(key){
+    	// console.log(document.cookie)
+    	var str = document.cookie;
+    	var arr1 = str.split(';')
+    	for(var i = 0;i<arr1.length;i++){
+    		var arr2 = arr1[i].split('=')
+    		// console.log(arr2)
+			for(var j = 0;j<arr1[i].length;j++){
+				// console.log(arr2[j])
+				if (key.trim() == arr2[0].trim()) {
+					return arr2[1];
+					break;
+				}
+			}
+		}
+	}
+     console.log(getCookie('sex'))
+	// console.log('name')
+	// console.log('age')
+	// console.log('')
+	/*
+	var oDate = new Date('2019-10-28 19:40:00')
+	oDate.setDate(oDate.getDate()+10)
+	document.cookie= "username=Tom;expires="+oDate;
+	document.cookie = "age=20"
+	*/
+	function removeCookie(key){
+		setCookie(key,false,-1)
+	}
+	removeCookie('age');
+</script>
+</html>

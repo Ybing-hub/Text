@@ -1,0 +1,9 @@
+.CategoryList .ant-table-body{
+	min-height: 600px;
+}
+.CategoryList .add-btn{
+	float: right;
+}
+.CategoryList .btn{
+	height: 40px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Drwp(options){
+		//罗列属性
+		this.Box = null;
+		this.width = options.width;
+		this.height = options.height;
+		this.backgroundColor = options.backgroundColor;
+		this.disX = 0;
+		this.disY = 0;
+		//初始化
+		this.init();
+		//绑定事件
+		this.bindEvent();
+	}
+	Drwp.prototype.init = function(){
+		this.oBox = document.createElement('div');
+		this.oBox.style.position = 'absolute';
+		this.oBox.style.top = '0px';
+		this.oBox.style.left = '0px';
+		this.oBox.style.width = this.width + 'px';
+		this.oBox.style.height = this.height + 'px';
+		this.oBox.style.backgroundColor = this.backgroundColor;
+
+		document.body.appendChild(this.oBox);
+	}
+	Drwp.prototype.bindEvent = function(){
+		this.oBox.onmousedown = function(ev){
+			var oEvent = ev || event;
+			this.disX = oEvent.clientX - this.oBox.offsetLeft;
+			this.disY = oEvent.clientY - this.oBox.offsetTop;
+			document.onmousemove = this.fnMove.bind(this);
+			document.onmouseup = this.fnUp;
+			/*document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				this.oBox.style.left = oEvent.clientX - this.disX + 'px';
+				this.oBox.style.top = oEvent.clientY - this.disY + 'px';
+			}.bind(this);
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}*/
+		}.bind(this);
+	}
+	Drwp.prototype.fnMove = function(ev){
+		var oEvent = ev || event;
+		var l = oEvent.clientX - this.disX;
+		var t = oEvent.clientY - this.disY;
+		this.oBox.style.left = l + 'px';
+		this.oBox.style.top = t + 'px';
+	}
+	Drwp.prototype.fnUp = function(){
+		document.onmousemove = null;
+		document.onmouseup = null;
+	}
+	function LimitDrwp(options){
+		Drwp.call(this,options)
+	}
+	LimitDrwp.prototype = Object.create(Drwp.prototype);
+	LimitDrwp.prototype.fnMove = function(ev){
+		var oEvent = ev || event;
+		var l = oEvent.clientX - this.disX;
+		var t = oEvent.clientY - this.disY;
+		if (l < 0) {
+			l = 0;
+		}else if (l > window.innerWidth - this.oBox.offsetWidth) {
+			l = window.innerWidth - this.oBox.offsetWidth;
+		}
+		if (t < 0) {
+			t = 0;
+		}else if (t > window.innerHeight - this.oBox.offsetHeight) {
+			t = window.innerHeight - this.oBox.offsetHeight;
+		}
+		this.oBox.style.left = l + 'px';
+		this.oBox.style.top = t + 'px';
+	}
+	new Drwp({
+		width:200,
+		height:200,
+		backgroundColor:'red'
+	});
+	new Drwp({
+		width:400,
+		height:400,
+		backgroundColor:'cyan'
+	});
+	new LimitDrwp({
+		width:100,
+		height:100,
+		backgroundColor:'skyblue'
+	})
+</script>
+</html>

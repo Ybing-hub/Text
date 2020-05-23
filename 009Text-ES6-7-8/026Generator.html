@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function * gen(){
+		console.log('gen start...')
+		yield 'data1';
+		console.log('gen home...')
+		yield 'data2';
+		console.log('gen end...')
+		// console.log('end end end')
+	}
+	gen()
+	// console.log(gen())
+	const g = gen()
+	console.log(g)
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+</script>
+</html>

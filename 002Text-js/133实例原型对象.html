@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	function Student(name,age,address,major	){
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.major = major;
+		if (!this.sayAddress) {
+			Student.prototype.sayAddress = function(){
+				console.log('I am from' + this.address)
+			}
+		}
+		if (!this.sayMajor) {
+			Student.prototype.sayMajoy = function(){
+				console.log('I study '+this.major)
+			}
+		}
+	}
+	var stu1 = new Student("dijia",22,"许昌","数字媒体");
+	console.log(stu1);
+	stu1.sayMajoy();
+	var stu2 = new Student("zhangsan",19,"禹州","土木工程");
+	console.log(stu2);
+	stu2.sayMajoy();
+</script>
+</html>

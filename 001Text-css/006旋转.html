@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006旋转.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+		    height:200px;
+		    background-color: red;
+		    margin: 100px auto;
+		    transform: rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">xxx</div>
+</body>
+<script type="text/javascript">
+	for(var i = 0;i<=3;++i){
+		process.nextTick(function(){
+			console.log(i)
+		})
+	}
+</script>
+</html>

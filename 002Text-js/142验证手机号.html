@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="text" id="txt1">
+	<input type="button" id="btn" value="扫描">
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oTxt1 = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn');
+	/*oBtn.onclick = function(){
+		var val = oTxt.value;
+		var reg = /^1[3579]\d{9}$/g;
+		if (reg.test(val)) {
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}*/
+	oBtn.onclick = function(){
+		var val = oTxt1.value;
+		var reg = /^[a-zA-Z]\w{5,11}$/g;
+		if (reg.test(val)) {
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}
+</script>
+</body>
+</html>

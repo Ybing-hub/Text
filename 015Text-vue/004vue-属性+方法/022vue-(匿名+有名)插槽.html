@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<layout>
+			<div slot="content">首页主要内容</div>
+			<div slot="hots">首页焦点内容</div>
+		</layout>
+	</div>
+	<template id="layout">
+		<div>
+			<div>顶部导航</div>
+			<slot name="content">内容部分</slot>
+			<slot name="hots">焦点部分</slot>
+			<div>底部导航</div>
+		</div>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var Layout = Vue.extend({
+		template:'#layout'
+	})
+	//注册
+	Vue.component('layout',Layout)
+
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			
+		}
+	})
+</script>
+</html>

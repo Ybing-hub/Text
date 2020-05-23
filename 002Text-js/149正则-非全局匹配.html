@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'dsaf2019-05-26sdfaaasa2019-09-09fdaffds2020-02-02'
+	var reg = /\d{4}-\d{2}-\d{2}/;
+	var re1 = /\d{4}-\d{2}-\d{2}/g;
+	var reg2 = /(?<Years>\d{4})-(?<Month>\d{2})-(?<Day>\d{2})/;
+	var reg3 = /(?<Years>\d{4})-(?<Month>\d{2})-(?<Day>\d{2})/g;
+	console.log(reg.lastIndex);
+	console.log(reg.exec(str));
+	console.log(reg.exec(str));
+	console.log(reg2.exec(str));
+	console.log(reg3.exec(str));
+</script>
+</html>

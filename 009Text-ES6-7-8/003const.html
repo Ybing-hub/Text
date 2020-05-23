@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003const.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+	console.log(aSian1)
+	const aSian1 = 5;
+	console.log(aSian1) 
+	 */
+	/*
+	if (true) {
+		const PI = 100;
+		console.log(PI)
+	}*/
+	const obj = {
+		name:'jane',
+		age:18
+	}
+	/*obj = {
+		//误解
+		name:'jike',
+		age:20
+	}*/
+	obj.name = 'any'
+	obj.age = '22'
+	obj.major = '软件'
+	console.log(obj)
+	delete obj.major
+	console.log(obj)
+</script>
+</html>

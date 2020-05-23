@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [56,2,36,65,56,2,56,54,65];
+	function uniqeArray(a){
+	 	var result = [];
+	 	var obj = {}
+	 	for(var i = 0;i<a.length;i++){
+	 		obj[a[i]] = "";
+	 	}
+	 	for(var attr in obj){
+	 		result.push(attr*1)
+	 	}
+	 	return result;
+	}
+	var x = uniqeArray(arr);
+	console.log(x)
+</script>
+</html>

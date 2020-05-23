@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var aLi = oUl.children;
+	var oColor;
+	for(var i = 0;i<aLi.length;i++){
+		// console.log(aLi[i]);
+		if (i%2) {
+			aLi[i].style.backgroundColor='#333'
+		}
+		else{
+			aLi[i].style.backgroundColor='#777'
+		}
+		aLi[i].onmouseover = function(){
+			oColor = this.style.backgroundColor;
+			this.style.backgroundColor='green';
+			console.log(oColor)
+		}
+		aLi[i].onmouseout = function(){
+			this.style.backgroundColor = oColor;
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="提交">
+	<ul id="ul1">
+		<li>1<a href="javascript:;" class="del">删除</a></li>
+		<li>2<a href="javascript:;" class="del">删除</a></li>
+		<li>3<a href="javascript:;" class="del">删除</a></li>
+		<li>4<a href="javascript:;" class="del">删除</a></li>
+		<li>5<a href="javascript:;" class="del">删除</a></li>
+		<li>6<a href="javascript:;" class="del">删除</a></li>
+		<li>7<a href="javascript:;" class="del">删除</a></li>
+		<li>8<a href="javascript:;" class="del">删除</a></li>
+		<li>9<a href="javascript:;" class="del">删除</a></li>
+		<li>10<a href="javascript:;" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl1 = document.getElementById('ul1');
+	var aA = document.getElementsByTagName('a');
+	oUl1.onclick = function(ev){
+		var oTarget = ev.target;
+		if (oTarget.className == 'del') {
+			oUl1.removeChild(oTarget.parentNode);
+		}
+	}
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		var oA = document.createElement('a')
+
+		oA.href = "javascript:;"
+		oA.innerHTML = '删除'
+		oA.className = 'del';
+		oLi.innerHTML = oTxt.value;
+
+		oUl1.appendChild(oLi);
+		oLi.appendChild(oA)
+		oTxt.value = "";
+	}
+
+</script>
+</html>

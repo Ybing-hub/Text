@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<a @click.prevent="toBaidu()" href="https://www.baidu.com">百度</a>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			
+		},
+		methods:{
+			toBaidu:function(){
+				console.log('baidu')
+			}
+		}
+	})
+</script>
+</html>

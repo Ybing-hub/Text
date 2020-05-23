@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 430px;
+			height: 400px;
+			border: 1px solid #000;
+			position: relative;
+			margin: 100px auto;
+			overflow: hidden;
+		}
+		#content{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 400px;
+			height: 400px;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 30px;
+			height: 400px;
+			background-color: #f67;
+		}
+		#btn{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 30px;
+			height: 30px;
+			background-color: red;
+		}
+		#txt{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="content">
+			<div id="txt">
+				　8月24日，美方宣布将提高对约5500亿美元中国输美商品加征关税的税率，并声称“要求美国企业离开中国”。该举动引发市场动荡以及美国社会各界的强烈不满。
+
+　　“这是一个重大的错误”
+
+　　美国商界对美方这一表态提出尖锐批评，他们警告，经贸摩擦升级将损害美国企业和更广泛的经济，同时，声称要求美国企业离开中国，对美国跨国公司构成了新的威胁。
+
+　　当天，道琼斯指数跌幅超过600点。美国消费者技术协会主席兼首席执行官加里·夏皮罗感叹：“真的受够了！今天道琼斯工业平均指数下跌623点，证明市场因担心经济衰退而步履蹒跚。经贸摩擦升级只会给美国带来更多痛苦，加征的关税是对美国人征收的税，让我们走上了错误的经济道路，损害了我们的全球地位，这是一个重大的错误。这种误入歧途的贸易政策带来的财政负担，还需要美国家庭、企业和社会承担多久？”
+
+　　美国商会常务副会长、国际事务负责人薄迈伦发表声明称，美中过去40年的经贸关系在很大程度上是富有成效的、建设性的和互利的。美国企业一直是中国经济发展的参与者，中国的发展造福两国人民，不希望看到美中关系进一步恶化。全美零售联合会负责政府关系的高级副主席戴维·弗伦奇称，“政府加征关税的决定显然并没有发挥作用，解决问题的办法不能是让美国企业和消费者承担更高的税负。这到哪里才是个尽头？”全美零售业领导者协会发表声明称，美方不断提高的关税已经扰乱了美国市场，不确定性将从华尔街蔓延到普通民众，受害的将是美国消费者，而不是中国，呼吁“在损害不可逆转之前结束这场经贸摩擦。”全美服装鞋业协会会长里克·黑尔芬拜因称，“提高加征关税税率对美国消费者、企业和经济来说将是一场灾难。”
+
+　　“随着破产和拖欠贷款的情况增加，人们感到越来越失望”
+
+　　美国金色星球服装公司负责人杰夫·菲舍尔对本报记者表示，美方宣称，已经征收的关税是由中国支付的，这绝对是谎言。关税鼓励进口商在美国生产，从而为美国创造就业，这也是谎言。关税不仅会以更高的价格对美国消费者造成负面影响，还可能对工人就业带来毁灭性的打击。时尚珠宝首饰贸易协会执行主任布莱特·克利夫兰告诉本报记者，关税是一种由美国消费者支付的税。几十年来，我们一直致力于发展与中国工厂的关系，更换这些工厂并不容易。时尚珠宝行业难以消化因关税增加带来的成本，9月份装运的货物是在此前4—6个月购买的，现在却要缴纳更高的关税，或者被迫取消采购订单，这将给进口商造成损失，最后还是会把负担转嫁给消费者。
+
+　　美国农业行业组织“农民争取自由贸易”发表声明称：“对于美国农民来说，经贸摩擦的痛苦每周都在加剧。大部分农业地区感到前景十分黯淡，愤怒正在蔓延。随着破产和拖欠贷款的情况增加，人们感到越来越失望。”
+
+　　“损害美国国内和全球经济增长”
+
+　　近期，“美国可能会因为保护主义政策和经贸摩擦而陷入经济衰退”的观点频繁见诸美国各大媒体。不少经济学家表示，对中国输美商品提高加征关税税率，可能会提高消费者从手机、视频游戏机到服装和鞋类等各种商品的购买价格。与此同时，有迹象显示美国经济增长正在放缓，包括企业利润下降和创造就业岗位减少。凯投宏观首席美国经济学家保罗·阿什沃思认为，对约5500亿美元的中国进口商品额外征收关税，相当于向美国消费者征收约270亿美元的关税，更大的威胁在于，对经贸摩擦何时以及是否能结束的担忧，造成了巨大恐慌。
+			</div>
+		</div>
+		<div id="box">
+			<div id="btn">
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var oWrap = document.getElementById('wrap')
+	var oContent = document.getElementById('content')
+	var oTxt = document.getElementById('txt')
+	var oBox = document.getElementById('box')
+	var oBtn = document.getElementById('btn')
+	var disY = 0,t = 0;
+	function hedl(){
+		if (t<0) {
+			t = 0;
+		}else if(t > (oBox.offsetHeight - oBtn.offsetHeight)){
+			t = oBox.offsetHeight - oBtn.offsetHeight;
+		}
+		var scale = t/(oBox.offsetHeight - oBtn.offsetHeight);
+		oTxt.style.top = (oContent.offsetHeight - oTxt.offsetHeight) * scale + 'px'
+		oBtn.style.top = t + 'px';
+	}
+	oBtn.onmousedown = function(ev){
+		disY = ev.clientY - oBox.offsetTop;
+		document.onmousemove = function(ev){
+			t = ev.clientY - disY;
+			hedl();
+			/*
+			if (t<0) {
+				t = 0;
+			}else if(t > (oBox.offsetHeight - oBtn.offsetHeight)){
+				t = oBox.offsetHeight - oBtn.offsetHeight;
+			}
+			var scale = t/(oBox.offsetHeight - oBtn.offsetHeight);
+			oTxt.style.top = (oContent.offsetHeight - oTxt.offsetHeight) * scale + 'px'
+			oBtn.style.top = t + 'px';*/
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+	oWrap.onmousewheel = function(ev){
+		disY = ev.clientY - oBox.offsetTop;
+		t = ev.clientY - disY;
+		if (ev.wheelDate > 0) {
+			t += 20;
+		}else {
+			t -= 20;
+		}
+		hedl();
+		/*
+		if (t<0) {
+			t = 0;
+		}else if(t > (oBox.offsetHeight - oBtn.offsetHeight)){
+			t = oBox.offsetHeight - oBtn.offsetHeight;
+		}
+		var scale = t/(oBox.offsetHeight - oBtn.offsetHeight);
+		oTxt.style.top = (oContent.offsetHeight - oTxt.offsetHeight) * scale + 'px'
+		oBtn.style.top = t + 'px';*/
+	}
+</script>
+</html>

@@ -1,0 +1,12 @@
+.ProductList .ant-table-body{
+	min-height: 600px;
+}
+.ProductList .add-btn{
+	float: right;
+}
+.ProductList .btn{
+	height: 40px;
+}
+.ProductAdd  .simditor-body{
+	overflow: hidden;
+}

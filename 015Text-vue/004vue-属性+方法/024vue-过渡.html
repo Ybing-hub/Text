@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+	<style>
+		button{
+			width: 100px;
+			margin-right: 50px;
+			line-height: 40px;
+		}
+		.fade-enter-active, .fade-leave-active {
+		  transition: opacity .5s;
+		}
+		.fade-enter, .fade-leave-to{
+		  opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<button @click="isShow=!isShow">切换</button>
+		<transition name="fade" appear>
+		<p v-if="isShow">点击点击瞅瞅</p>
+		</transition>
+	</div>
+	<template id="tab-home">
+		<div>home</div>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var Home = Vue.extend({
+		template:'#tab-home'
+	})
+	//注册
+	Vue.component('tab-home',Home)
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			isShow:true
+		}
+	})
+</script>
+</html>

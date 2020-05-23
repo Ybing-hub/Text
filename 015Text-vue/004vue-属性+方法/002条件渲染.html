@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<input v-model="score" type="text" name="">
+		<p>你的成绩为：{{score}}</p>
+		<p v-if="score >=90">可以啊😢</p>
+		<p v-else-if="score >=80">还可以吧😢</p>
+		<p v-else-if="score >=70">可以了😢</p>
+		<p v-else-if="score >=60">可以了吧😢</p>
+		<p v-else>可以😢</p>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			score:0
+		}
+	})
+</script>
+</html>

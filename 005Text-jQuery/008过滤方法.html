@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			/*display: none;*/
+		}
+	</style>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div class="box">div3 <span></span></div>
+	<div>div4</div>
+	<div class="box">div5 <span></span></div>
+	<div>div6</div>
+	<div class="box">div7 <span></span></div>
+	<div>div8</div>
+	<div>div9</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	$(function(){
+		/*console.log($('div').eq(-2));
+		console.log($('div:eq(3)').siblings());
+		console.log($('div:hidden').css({
+			display:'block'
+		}))
+		console.log($('div:visible'))*/
+		console.log($('div').find('span'))
+	})
+</script>
+</html>

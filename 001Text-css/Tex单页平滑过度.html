@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav>input,
+		.nav>a{
+			position: fixed;
+			top: 0px;
+			width: 20%;
+			height: 34px;
+			text-align: center;
+			line-height: 34px;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.nav>input{
+			z-index: 9;
+			opacity: 0;
+		}
+		.nav>a{
+			text-decoration: none;
+			z-index: 1;
+			font-size: 24px;
+		}
+		.nav>input:checked+a{
+			color: red;
+		}
+		.nav>input:hover+a{
+			background-color: rgba(0,0,0,0.9);
+		}
+		#ctrl1,#ctrl1+a{
+			left: 0%;
+		}
+		#ctrl2,#ctrl2+a{
+			left: 20%;
+		}
+		#ctrl3,#ctrl3+a{
+			left: 40%;
+		}
+		#ctrl4,#ctrl4+a{
+			left: 60%;
+		}
+		#ctrl5,#ctrl5+a{
+			left: 80%;
+		}
+		html,body{
+			height: 100%;
+		}
+		.content{
+			height: 100%;
+			transition: all 1s;
+		}
+		.nav{
+			height: 100%;
+			overflow: hidden;
+		}
+		.pages{
+			height: 100%;
+			padding-top: 34px;
+			box-sizing: border-box;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+		#ctrl1:checked~.content{
+			transform: translateY(0%);
+		}
+		#ctrl2:checked~.content{
+			transform: translateY(-100%);
+		}
+		#ctrl3:checked~.content{
+			transform: translateY(-200%);
+		}
+		#ctrl4:checked~.content{
+			transform: translateY(-300%);
+		}
+		#ctrl5:checked~.content{
+			transform: translateY(-400%);
+		}
+		.page1{
+			background-image: url(../image/home.png);
+		}
+		.page2{
+			background-image: url(../image/service.png);
+		}
+		.page3{
+			background-image: url(../image/about.png);
+		}
+		.page4{
+			background-image: url(../image/team.png);
+		}
+		.page5{
+			background-image: url(../image/contact.png);
+		}
+		@keyframes sport{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+		#ctrl1:checked~.content .page1{
+			animation: sport 2s;
+		}
+		#ctrl2:checked~.content .page2{
+			animation: sport 2s;
+		}
+		#ctrl3:checked~.content .page3{
+			animation: sport 2s;
+		}
+		#ctrl4:checked~.content .page4{
+			animation: sport 2s;
+		}
+		#ctrl5:checked~.content .page5{
+			animation: sport 2s;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<input type="radio" name="nav" id="ctrl1"><a href="#">Home</a>
+		<input type="radio" name="nav" id="ctrl2"><a href="#">Service</a>
+		<input type="radio" name="nav" id="ctrl3"><a href="#">About</a>
+		<input type="radio" name="nav" id="ctrl4"><a href="#">Team</a>
+		<input type="radio" name="nav" id="ctrl5"><a href="#">Contact</a>
+		<div class="content">
+			<div class="page1 pages"></div>
+			<div class="page2 pages"></div>
+			<div class="page3 pages"></div>
+			<div class="page4 pages"></div>
+			<div class="page5 pages"></div>
+		</div>
+	</div>
+</body>
+</html>

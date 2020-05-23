@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>成绩</th>
+				<th>是否合格</th>
+			</tr>
+			<tr v-for="student in students">
+				<td>{{student.name}}</td>
+				<td>{{student.age}}</td>
+				<td>{{student.score}}</td>
+				<td v-if="score >=60">可以</td>
+				<td v-else>菜</td>
+			</tr>
+		</table>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			students:
+			[
+				{name:'tom',age:18,score:50},
+				{name:'jane',age:20,score:98},
+				{name:'peter',age:18,score:80},
+			]
+		}
+	})
+</script>
+</html>

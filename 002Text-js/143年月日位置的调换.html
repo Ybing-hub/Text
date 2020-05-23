@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = '2019-08-29'
+	var reg = /(\d{4})-(\d{2})-(\d{2})/g;
+	console.log(arr.replace(reg,'$2-$3-$1'))
+	
+	var arr1 = 'this is art that is'
+	var reg1 = /\bis\b/g;
+	console.log(arr1.replace(reg1,'*'))
+</script>
+</html>

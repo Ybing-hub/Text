@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box1">div1</div>
+	<div id="box2">div2</div>
+	<div class="box3">div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<input type="text" data-name='jike'>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	/*var oBox3 = $('div').index($('.box3'))
+	console.log(oBox3)
+
+	var oBox2 = $('div').index($('#box2'))
+	console.log(oBox2)
+
+	
+
+	var oInput = $('input').data('key');
+	var oInput1 = $('input').data('key','tbes');
+	console.log(oInput);
+	console.log(oInput1);*/
+
+	console.log($('div').is('.box1'));
+	$(function(){
+
+		$('div').each(function(index,ele){
+			console.log(index,ele)
+			$(this).css({
+				color:'red'
+			})
+		})
+
+		// console.log($('input').data('key','hellow'));
+		console.log($('input').data('name'));
+
+	})
+</script>
+</html>

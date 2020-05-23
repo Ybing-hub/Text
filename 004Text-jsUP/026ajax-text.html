@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-ajax-text.html</title>
+</head>
+<body>
+	<button id="btn">获取数据-简单应用</button>
+</body>
+<script>
+	function ajax(method,url,data,fnSucc,fnFail){
+		var oAjax = new XMLHttpRequest();
+		if(method.toUpperCase() == 'POST'){
+			oAjax.open(method,url,true);
+			oAjax.send(data);
+			
+		}else if(method.toUpperCase() == 'GET'){
+			if(data){
+				url += '?'+data;
+			}
+			oAjax.open(method,url,true)
+			oAjax.send();
+		}
+		else{
+			oAjax.open(method,url,true)
+			oAjax.send();
+		}
+		oAjax.onreadystatechange = function(){
+			if(oAjax.readyState == 4){
+				// console.log(oAjax.getResponseHeader('date'))
+				// console.log(oAjax.getResponseHeader('connection'))
+				// console.log(oAjax.getResponseHeader('Content-Type'))
+				try{
+					if(oAjax.status == 200){
+						var obj = JSON.parse(oAjax.responseText);
+						typeof fnSucc == 'function' && fnSucc(obj);
+					}
+				}catch(e){
+					typeof fnFail == 'function' && fnFail(e);
+				}
+			}
+		}
+	}
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick =  function(){
+		ajax('put',
+			'http://127.0.0.1:3001/edmit',
+			'',
+			function(arr){
+				var oUl = document.createElement('ul');
+				for(var i=0;i<arr.length;i++){
+					var oLi = document.createElement('li');
+					oLi.innerHTML = '姓名：'+arr[i].name+'年龄：'+arr	[i].age;
+					oUl.appendChild(oLi);
+				}
+				document.body.appendChild(oUl);
+			},
+			function(err){
+				console.log(err)
+			}
+		)
+	}
+</script>
+</html>

@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more",
+    "pages/article/article",
+    
+     "pages/article/article-detail/article-detail",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "color": "#e00",
+    "selectedColor":"#00e",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/article/article",
+        "text": "购物篇",
+        "iconPath":"/images/icon/reading-none.png",
+        "selectedIconPath":"/images/icon/reading.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影篇",
+        "iconPath":"/images/icon/movie-none.png",
+        "selectedIconPath":"/images/icon/movie.png"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff6700",
+    "navigationBarTitleText": "掌上购物",
+    "navigationBarTextStyle":"black"
+  },
+  "requiredBackgroundModes": ["audio", "location"],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

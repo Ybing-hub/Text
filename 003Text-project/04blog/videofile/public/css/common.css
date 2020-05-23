@@ -1,0 +1,24 @@
+#nav-blog .navbar-nav li a{
+	background-color: transparent;
+}
+#nav-blog .navbar-nav li{
+	margin-right: 15px;
+}
+#nav-blog .navbar-nav li a{
+	font-size: 16px;
+}
+#nav-blog .navbar-nav li a:hover{
+	color: blue;
+}
+.link{
+	color: cyan !important;
+}
+.link:hover{
+	color: red !important;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}

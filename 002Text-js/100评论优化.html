@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 400px;
+			margin: 100px auto;
+		}
+		li{
+			list-style: none;
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px dashed #f67;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="text" id="txt">
+		<button id="btn">点我</button>
+		<ul id="ul1">
+			<li>楼主</li>
+		</ul>
+	</div>
+</body>
+<script src="Js/until.js"></script>
+<script>
+	var oTxt = document.getElementById('txt')
+	var oBtn = document.getElementById('btn')
+	var oUl = document.getElementById('ul1')
+	oBtn.onclick = function(){
+		// alert('aaa')
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oTxt.value = '';
+		oLi.style.height = 0;
+		oLi.style.opacity = 0;
+		anmiation(oLi,{height:40},true,function(){
+			anmiation(oLi,{opacity:100})
+		})
+	}
+</script>
+</html>

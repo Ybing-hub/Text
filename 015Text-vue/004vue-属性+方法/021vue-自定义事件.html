@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+</head>
+<body>
+	<div id="app">
+		<my-component @total-count="addTotal()"></my-component>
+		<my-component></my-component>
+		<my-component @total-count="addTotal()"></my-component>
+		<p>总共点击了{{total}}次</p>
+	</div>
+	<template id="btn1">
+		<button @click="addCount()">我被点击了 {{ count }} 次</button>
+	</template>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	//定义
+	var btnComponent = Vue.extend({
+		data(){
+			return{
+				count:0
+			}
+		},
+		template:'#btn1',
+		methods:{
+			addCount:function(){
+				this.count++
+				this.$emit('total-count')
+			}
+		}
+	})
+	//注册
+	Vue.component('my-component',btnComponent)
+
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			total:0
+		},
+		methods:{
+			addTotal:function(){
+				this.total++
+			}
+		}
+	})
+</script>
+</html>

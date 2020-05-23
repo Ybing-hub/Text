@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.btn-list{
+			overflow: hidden; 
+			margin-bottom: 20px;
+		}
+		.btn-list li{
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			float: left;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom:1px solid #ff6700;
+		}
+		.content-item li{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			text-align: center;
+			line-height: 300px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="btn-list">
+		<li class="active">热门</li>
+		<li>冰箱</li>
+		<li>电视</li>
+		<li>电脑</li>
+	</ul>
+	<ul id="content-item">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	/*
+	var aBtn=document.querySelectorAll('#btn-list li')
+	var aCont=document.querySelectorAll('#content-item li')
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index = i;
+		aBtn[i].onclick=function(){
+			console.log(this);
+			for(var j=0;j<aBtn.length;j++){
+				aBtn[j].className = '';
+				aCont[j].style.display = 'none';
+			}
+			this.className='active';
+			aCont[this.index].style.display = 'block';
+		}
+	}*/
+	function Tab(){
+		this.aBtn = document.querySelectorAll('.btn-list li');
+		this.aCont = document.querySelectorAll('.content-item li');
+		this.BindEvent();
+	}
+	Tab.prototype.BindEvent = function(){
+		var _this = this;
+		for(var i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onclick = function(){
+				_this.fnClick(this);
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){
+		for(var i = 0;i<this.aBtn.length;i++){
+			this.aBtn[i].className = '';
+			this.aCont[i].style.display = 'none';
+		}
+		oBtn.className = 'active';
+		this.aCont[oBtn.index].style.display = 'block';
+	}
+	new Tab();
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'fds65g465sd45DFGHJs4f65g4d6532df1636546546afdsg';
+	var str2 = '打开新世界world'
+	var reg = /a|b|c|d|e/g;
+	var reg1 = /[a-z]/g;
+	var reg2 =/[0-9]/g
+	var reg3 =/[A-Z]/g
+	var reg4 =/[A-Za-z0-9]/g
+	var reg5 = /[\u4e00-\u9fa5]/g;
+	console.log(str.replace(reg,'*')); 
+	console.log(str.replace(reg1,'*')); 
+	console.log(str.replace(reg2,'*')); 
+	console.log(str.replace(reg3,'*'));
+	console.log(str.replace(reg4,'*'));
+	console.log(str2.replace(reg5,'*'));
+	function toStr(str){
+		return str.replace(/[\u4e00-\u9fa5]/g,'xx')
+	}
+	var Y = toStr(str2);
+	console.log(Y);
+</script>
+</html>

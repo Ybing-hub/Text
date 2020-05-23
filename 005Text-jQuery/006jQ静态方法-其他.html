@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+</body>
+<script src="jquery-3.4.1.js"></script>
+<script>
+	var str = "   ds   fa   "
+	console.log(str);
+	var oTrim = $.trim(str)
+	console.log(oTrim);
+
+	var obj = {
+		name:"jany",
+		age:18,
+		sex:"male"
+	}
+	var obj2 = {
+		name:"jike",
+		major:"computer"
+	}
+	var oExtend = $.extend(obj,obj2)
+	console.log(oExtend)
+
+	function show(){
+		console.log(this)
+	}
+	var oProXy = $.proxy(show,this)
+	console.log(oProXy())
+</script>
+</html>

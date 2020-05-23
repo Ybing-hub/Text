@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var { keys,entries,values,getOwnPropertyDescriptors } = Object
+	var obj = {
+		username:'kangkang',
+		age:18,
+		sex:'male'
+	}
+	Object.defineProperty(obj,'legs',{
+		value:2,
+		enumerable:true
+	})
+	console.log(keys(obj))
+	console.log(entries(obj))
+	console.log(values(obj))
+	console.log(getOwnPropertyDescriptors(obj))
+	
+</script>
+</html>

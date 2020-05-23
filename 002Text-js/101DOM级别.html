@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点我</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	// oBtn.onclick = function(){
+	// 	alert('aaa')
+	// }
+	function hellow(){
+		alert('hellow')
+	}
+	function hi(){
+		alert('hi...')
+	}
+	function wai(){
+		alert('wai...')
+	}
+	// oBtn.onclick = hi;
+	// oBtn.onclick = hellow;
+
+	oBtn.addEventListener('click',hellow,false)
+	oBtn.addEventListener('click',hi,false)
+	oBtn.addEventListener('click',wai,false)
+
+	oBtn.removeEventListener('click',hi,false)
+</script>
+</html>

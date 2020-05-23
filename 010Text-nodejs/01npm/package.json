@@ -1,0 +1,16 @@
+{
+  "name": "02pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
+//   / | \ 上面符号，中为正，左为斜线，右为反斜；八字，先撇为斜，后捺为反斜。

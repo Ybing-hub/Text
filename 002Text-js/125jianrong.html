@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function handle(){
+		console.log('click')
+	}
+	document.onclick = function(elem,type,fn){
+		if (elem.addEventListener) {
+			elem.addEventListener(type,fn,false)
+		}else if (elem.attachEvent) {
+			elem.attachEvent('on',type,fn)
+		}
+	}
+	document.addEventListener('click',handle)
+	document.attachEvent('click',handle);
+	document.detachEvent()
+</script>
+</html>

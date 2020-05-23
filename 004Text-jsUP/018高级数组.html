@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,2,3,69,87,47]
+	var arr1 = arr.forEach(function(value,index){
+		return value;
+	})
+	console.log(arr1);
+	var arr2 = arr.map(function(value,index){
+		return value*10;
+	})
+	console.log(arr2);
+	var arr3 = arr.filter(function(value,index){
+		return value>50;
+	})
+	console.log(arr3);
+	var arr4 = arr.every(function(value,index){
+		return value>2;
+	})
+	console.log(arr4);
+	var arr5 = arr.some(function(value,index){
+		return value>0;
+	})
+	console.log(arr5);
+</script>
+</html>

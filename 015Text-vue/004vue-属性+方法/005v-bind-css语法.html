@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue text</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background-color: cyan;
+		}
+		.error{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p class="active error">vue国人的js</p><br/>
+		<p :class="{active:true,error:true}">vue国人的js</p><br/>
+		<p :class="{active:isActive,error:isError}">vue国人的js</p><br/>
+		<p :class="[{active:isActive},{error:isError}]">vue国人的js</p><br/>
+		<p :class="objClass">:class="{objClass}"</p><br/>
+		<p :class="arrClass">:class="arrClass"</p><br/>
+	</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			isActive:true,
+			isError:false,
+			objClass:{
+				active:'cyan',
+				error:'red'
+			},
+			arrClass:[
+				{active:'cyan'},
+				{error:'red'},
+			]
+		}
+	})
+</script>
+</html>
